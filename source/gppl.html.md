@@ -24,4 +24,3 @@ meta:
   - name: description
     content: General Purpose Programming Language Comparison
 ---
-# Comparing General Programming Language
