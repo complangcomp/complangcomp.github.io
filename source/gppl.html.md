@@ -1,15 +1,14 @@
 ---
-title: PL Compare
+title: GPPL Compare
 
 language_tabs: # must be one of https://git.io/vQNgJ
+  - some_lang
 
 toc_footers:
-  - <a href='/gppl.html'>General</a>
+  - <a href="/">Home</a>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - index/introduction
-  - index/introduction/inspirations
 
 search: true
 
@@ -17,5 +16,6 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Programming Language Comparison Home
+    content: General Purpose Programming Language Comparison
 ---
+# Comparing General Programming Language
