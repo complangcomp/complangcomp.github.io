@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - some_lang
 
 toc_footers:
-  - <a href="/">Home</a>
+  - <a href="/programming-languages-comparison">Home</a>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
