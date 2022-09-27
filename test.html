@@ -5,11 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta
-            name="description"
-            content="General Purpose Programming Language Comparison"
-        >
-    <title>GPPL Compare</title>
+    <title>TEST PAGE</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -295,7 +291,7 @@
     </script>
   </head>
 
-  <body class="gppl" data-languages="[&quot;csharp&quot;,&quot;python&quot;,&quot;rust&quot;]">
+  <body class="test" data-languages="[&quot;markdown--langa&quot;,&quot;markdown--langb&quot;,&quot;markdown--langc&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -305,9 +301,9 @@
     <div class="toc-wrapper">
       <img src="images/logo-842e4954.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="csharp">C#</a>
-              <a href="#" data-language-name="python">Python</a>
-              <a href="#" data-language-name="rust">Rust</a>
+              <a href="#" data-language-name="markdown--langa">Language A</a>
+              <a href="#" data-language-name="markdown--langb">Language B</a>
+              <a href="#" data-language-name="markdown--langc">Language C</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -315,66 +311,117 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#about" class="toc-h2 toc-link" data-title="About">About</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#comments" class="toc-h1 toc-link" data-title="Comments">Comments</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#line-comments" class="toc-h2 toc-link" data-title="Line Comments">Line Comments</a>
-                  </li>
-              </ul>
+            <a href="#section-title" class="toc-h1 toc-link" data-title="Section Title">Section Title</a>
           </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href="/programming-languages-comparison">Home</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Comparing General Programming Language</p>
-<h2 id='about'>About</h2>
-<p>This page provides a comparison between many general purpose programming languages. </p>
-<h1 id='comments'>Comments</h1><h2 id='line-comments'>Line Comments</h2>
-<p>Line comments are comments that run from the start of some symbol to the end of the line.</p>
+        <!-- 
+    Highest level file only layout what the page should have.
+    No markdown content should directly be provide here. 
+    Use includes to control what content is shown and where it is placed.
+    Use language_tabs to describe what languages are used.
+    If a space is needed between words in a language, use a non-breaking space.
+-->
+<!-- This is an HTML Comment, will not be rendered -->
+<h1 id='section-title'>Section Title</h1>
+<!-- 
+    Only a single section title per page
+    (e.g., cannot have #title then ## subtitle in the same file).
+    Add additional `#` to control subheadings, up to 6.
+-->
+
+<!-- 
+    Layout every section should follow:
+        1. Code Introduction Annotation (either 0 or 1 sections)
+        2. Code Blocks for supported languages (N == # of languages)
+        3. Code Conclusion Annotation (either 0 or 1 sections)
+        4. Plain Text Introduction (1)
+        5. Paragraph and Table comparison (0 to X == # of tables) 
+        6. Plain Text Conclusion (either 0 or 1) 
+ -->
 
 <blockquote>
-<p>Line Comments between language</p>
+<p>Code Introductory annotation
+This provides a quick overview of what the code blocks are meant to describe.
+Ideally, this block only provides the semantic meaning of the code.
+Code blocks will provide the syntax that implements the semantics. 
+Remember to provide a newline buffer between
+this code intro text and first code block.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// This is a single line comment</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># This is a single line comment
-</span></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// This is a single line comment</span>
+<div class="highlight"><pre class="highlight markdown tab-markdown--langa"><code>Code fence showing off code.
+Use language tabs to switch between the languages.
+</code></pre></div><div class="highlight"><pre class="highlight markdown tab-markdown--langb"><code>Another language.
+Remember to give each language title for code blocks.
+The size of the code block will be automatically fit whatever is inside the block.
+Minimum size is a single line snippet of code (even if empty).
+
+Code blocks should provide the minimal snippet required to show what is described.
+This need not be complete (for example, one might need to place it in a main function to have it work).
+Code blocks work under the premise that the user knows enough to reasonably place the snippets of code.
+</code></pre></div><div class="highlight"><pre class="highlight markdown tab-markdown--langc"><code>
 </code></pre></div>
+<blockquote>
+<p>Code Conclusion annotation
+Provide any common output information if available.
+This should describe a general output between languages and not to any specific language.
+Specific output will be provided within the code block in a comment.
+Remember to provide a newline buffer between
+last code block and this common output info.</p>
+</blockquote>
+
+<p>Introductory section text for this section.
+This one is for giving a plain language version of what the code should be doing.
+Make no specific reference to any of the code blocks themselves, but language descriptions are fine.</p>
+
+<p>New paragraph by adding two newlines from the end.
+Sentences can optionally be placed on a single new line.</p>
+
+<p>Table Explanations providing quick comparison reference.
+Tables format follows <a href="https://michelf.ca/projects/php-markdown/extra/#table">PHP Markdown Extras</a>.</p>
+
 <table><thead>
 <tr>
-<th>Start Symbol</th>
-<th>Languages</th>
+<th>Header 1</th>
+<th>Header 2</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>//</td>
-<td>C#, Rust</td>
+<td>Row 1</td>
+<td>Info</td>
 </tr>
 <tr>
-<td>#</td>
-<td>Python</td>
+<td>Row 2</td>
+<td>More Info</td>
+</tr>
+<tr>
+<td>Row 3</td>
+<td>Some More Info</td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+    This is where you would place specific notes.
+</aside>
+
+<aside class="warning">
+    This is where you would place pitfall of thought.
+</aside>
+
+<aside class="success">
+    This is a success aside. Not sure what this could be used for.
+</aside>
+
+<p>Any final text.</p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="csharp">C#</a>
-                <a href="#" data-language-name="python">Python</a>
-                <a href="#" data-language-name="rust">Rust</a>
+                <a href="#" data-language-name="markdown--langa">Language A</a>
+                <a href="#" data-language-name="markdown--langb">Language B</a>
+                <a href="#" data-language-name="markdown--langc">Language C</a>
           </div>
       </div>
     </div>
