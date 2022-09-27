@@ -52,9 +52,9 @@ under the License.
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
     <% if current_page.data.search %>
-      <%= javascript_include_tag  "all" %>
+      <%= javascript_include_tag  "all", defer: true%>
     <% else %>
-      <%= javascript_include_tag  "all_nosearch" %>
+      <%= javascript_include_tag  "all_nosearch", defer: true%>
     <% end %>
 
     <% if current_page.data.code_clipboard %>
