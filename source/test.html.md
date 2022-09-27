@@ -1,38 +1,23 @@
 ---
 title: TEST PAGE
 
+language_tabs:
+    - markdown--langa: Language A
+    - markdown--langb: Language B
+    - markdown--langc: Language C
+
+includes:
+    - test/format
+
 search: true
 
 code_clipboard: true
 
 ---
-# Section Title 
-<!-- Add more `#` to control subheadings -->
-Introductory text for this section
-
-> Code Introductory text
-> Remember to provide a newline buffer between
-> this code intro text and first code block.
-
-```
-Code fence showing off code.
-Provide the minimal working version (if copy and pasted, it will just work).
-```
-
-```
-Another language.
-Remember to give each language title.
-```
-
-> Provide any common output information
-> Remember to provide a newline buffer between
-> last code block and this common output info.
-
-Table Explanations providing quick comparison reference 
-
-| Header 1 | Header 2 |
-| -------------- | ----------- |
-| Row 1           | Info  |
-| Row 2            | More Info    |
-
-Any final comments.
+<!-- 
+    Highest level file only layout what the page should have.
+    No markdown content should directly be provide here. 
+    Use includes to control what content is shown and where it is placed.
+    Use language_tabs to describe what languages are used.
+    If a space is needed between words in a language, use a non-breaking space.
+-->
