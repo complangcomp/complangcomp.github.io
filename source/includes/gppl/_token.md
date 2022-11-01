@@ -1,0 +1,2 @@
+# Token
+These are the smallest meaningful value known by the program. They often take the form of literal values and identifiers. There are many different kinds of tokens, this part will only focus on general categories that are often found between languages

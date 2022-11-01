@@ -19,6 +19,16 @@ includes:
   - gppl/comments/line-comments
   # - gppl/comments/block-comments
   # - gppl/comments/documentation-comments
+  - gppl/token
+  # - gppl/token/literal
+  # - gppl/token/literal/boolean-literal
+  # - gppl/token/literal/numeric-literal
+  # - gppl/token/literal/textual-literal
+  # - gppl/token/reserved
+  # - gppl/token/reserved/keywords
+  # - gppl/token/reserved/operators
+  # - gppl/token/identifier
+  # - gppl/token/punctuation
   # - gppl/type
   # - gppl/type/atomic
   # - gppl/type/atomic/bool
@@ -39,7 +49,9 @@ includes:
   # - gppl/type/composite/heterogeneous
   # - gppl/type/composite/heterogeneous/tuple
   # - gppl/type/composite/heterogeneous/struct
+  # - gppl/expression
   # - gppl/variable
+  # - gppl/statement
   # - gppl/sequence
   # - gppl/condition
   # - gppl/repetition
