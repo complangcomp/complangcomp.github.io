@@ -22,7 +22,14 @@ under the License.
     end
   end
 %>
-
+<%#
+Internationalization (i18n) support.
+%>
+<%
+  t_reg = /t\(([^\)]+)\)/
+  current_page.data.title = current_page.data.title.gsub(t_reg){|t| eval(t)}
+  page_content = page_content.gsub(t_reg){|t| eval(t)}
+%>
 <!doctype html>
 <html>
   <head>
