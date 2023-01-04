@@ -114,27 +114,29 @@ Internationalization (i18n) support.
           </li>
         <% end %>
       </ul>
-      <% if current_page.data.toc_footers %>
-        <ul class="toc-footer">
+      <ul class="toc-footer">
+        <% if current_page.data.lang_switch %>
           <% t(:lang).each do |lang| %>
             <li>
-              <% if lang.is_a? Hash %>
-                <a href="/<%= lang.keys.first %>"><%= lang.values.first %></a>
-              <% else %>
-                <a href="/<%= lang %>"><%= lang %></a>
-              <% end %>
+            <% if lang.is_a? Hash %>
+            <a href="/<%= lang.keys.first %>/<%= current_page.path.partition("/").last %>"><%= lang.values.first %></a>
+            <% else %>
+            <a href="/<%= lang %>/<%= current_page.path.partition("/").last %>"><%= lang %></a>
+            <% end %>
             </li>
           <% end %>
           <hr/>
+        <% end %>
+        <% if current_page.data.toc_footers %>
           <% current_page.data.toc_footers.each do |footer| %>
             <li><%= footer %></li>
-          <% end %>
-          <hr/>
-          <li><a href='https://github.com/SurajSSingh/programming-languages-comparison'> GitHub Repository </a> provided under <br /> the <a href='https://www.apache.org/licenses/LICENSE-2.0'> Apache 2.0 License </a></li>
-          <li><br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <br /> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons <br /> Attribution-ShareAlike <br /> 4.0 International License</a>.</li>
+            <% end %>
+            <hr/>
+        <% end %>
+          <li>This project can be found on <br/> <a href='https://github.com/SurajSSingh/programming-languages-comparison'> GitHub </a> provided under <br /> the <a href='https://www.apache.org/licenses/LICENSE-2.0'> Apache 2.0 License </a></li>
+          <li><br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />The content is licensed under a <br /> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons <br /> Attribution-ShareAlike <br /> 4.0 International License</a>.</li>
           <li><br /> <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
-      <% end %>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
