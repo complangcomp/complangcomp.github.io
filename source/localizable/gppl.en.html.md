@@ -12,22 +12,23 @@ toc_footers:
 includes:
   - gppl/introduction
   - gppl/introduction/about
+  - gppl/introduction/languages
   - gppl/comments
   - gppl/comments/line-comments
   - gppl/comments/block-comments
   - gppl/comments/documentation-comments
   - gppl/token
-  # - gppl/token/literal
+  - gppl/token/literal
   # - gppl/token/literal/boolean-literal
   # - gppl/token/literal/numeric-literal
   # - gppl/token/literal/textual-literal
-  # - gppl/token/reserved
-  # - gppl/token/reserved/keywords
-  # - gppl/token/reserved/operators
-  # - gppl/token/identifier
+  - gppl/token/keywords
+  - gppl/token/operators
+  - gppl/token/identifier
+  - gppl/token/reserved
   # - gppl/token/punctuation
-  # - gppl/type
-  # - gppl/type/atomic
+  - gppl/type
+  - gppl/type/atomic
   # - gppl/type/atomic/bool
   # - gppl/type/atomic/bytes
   # - gppl/type/atomic/number
@@ -38,7 +39,7 @@ includes:
   # - gppl/type/atomic/number/complex
   # - gppl/type/atomic/text
   # - gppl/type/atomic/text/character
-  # - gppl/type/composite
+  - gppl/type/composite
   # - gppl/type/composite/text
   # - gppl/type/composite/text/string
   # - gppl/type/composite/homogeneous
@@ -46,15 +47,22 @@ includes:
   # - gppl/type/composite/heterogeneous
   # - gppl/type/composite/heterogeneous/tuple
   # - gppl/type/composite/heterogeneous/struct
-  # - gppl/expression
-  # - gppl/variable
-  # - gppl/statement
-  # - gppl/sequence
-  # - gppl/condition
-  # - gppl/repetition
-  # - gppl/repetition/iteration
-  # - gppl/repetition/recursion
-  # - gppl/function
+  - gppl/expression
+  - gppl/statement
+  - gppl/variable
+  - gppl/callable-unit
+  - gppl/control-flow
+  - gppl/control-flow/sequence
+  - gppl/control-flow/selection
+  - gppl/control-flow/selection/single_branch
+  - gppl/control-flow/selection/branch_with_alternative
+  - gppl/control-flow/repetition
+  - gppl/control-flow/repetition/condition
+  - gppl/control-flow/repetition/condition/while
+  - gppl/control-flow/repetition/infinite
+  - gppl/control-flow/repetition/iteration
+  - gppl/control-flow/repetition/iteration/count_controlled
+  - gppl/control-flow/repetition/recursion
 
 search: true
 
