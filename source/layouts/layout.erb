@@ -22,13 +22,21 @@ under the License.
     end
   end
 %>
-
+<%#
+Internationalization (i18n) support.
+%>
+<%
+  t_reg = /t\(([^\)]+)\)/
+  current_page.data.title = current_page.data.title.gsub(t_reg){|t| eval(t)}
+  page_content = page_content.gsub(t_reg){|t| eval(t)}
+%>
 <!doctype html>
-<html>
+<html lang="<% t(:code) || 'en' %>">
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <base href="<%= current_page.url %>"/>
     <% if current_page.data.key?('meta') %>
       <% current_page.data.meta.each do |meta| %>
         <meta
@@ -72,7 +80,7 @@ under the License.
       </span>
     </a>
     <div class="toc-wrapper">
-      <%= image_tag "logo.png", class: 'logo' %>
+      <a href="home.html"><%= image_tag "logo.png", class: 'logo' %></a>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
@@ -106,13 +114,29 @@ under the License.
           </li>
         <% end %>
       </ul>
-      <% if current_page.data.toc_footers %>
-        <ul class="toc-footer">
+      <ul class="toc-footer">
+        <% if current_page.data.lang_switch %>
+          <% t(:lang).each do |lang| %>
+            <li>
+            <% if lang.is_a? Hash %>
+            <a href="/<%= lang.keys.first %>/<%= current_page.path.partition("/").last %>"><%= lang.values.first %></a>
+            <% else %>
+            <a href="/<%= lang %>/<%= current_page.path.partition("/").last %>"><%= lang %></a>
+            <% end %>
+            </li>
+          <% end %>
+          <hr/>
+        <% end %>
+        <% if current_page.data.toc_footers %>
           <% current_page.data.toc_footers.each do |footer| %>
             <li><%= footer %></li>
-          <% end %>
+            <% end %>
+            <hr/>
+        <% end %>
+          <li>This project can be found on <br/> <a href='https://github.com/SurajSSingh/programming-languages-comparison'> GitHub </a> provided under <br /> the <a href='https://www.apache.org/licenses/LICENSE-2.0'> Apache 2.0 License </a></li>
+          <li><br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />The content is licensed under a <br /> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons <br /> Attribution-ShareAlike <br /> 4.0 International License</a>.</li>
+          <li><br /> <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
-      <% end %>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>

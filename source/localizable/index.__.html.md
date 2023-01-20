@@ -1,14 +1,11 @@
 ---
 title: PL Compare
 
-toc_footers:
-  - <br /> <a href='https://github.com/SurajSSingh/programming-languages-comparison'> GitHub Repository </a> provided under <br /> the <a href='https://www.apache.org/licenses/LICENSE-2.0'> Apache 2.0 License </a>
-  - <br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <br /> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons <br /> Attribution-ShareAlike <br /> 4.0 International License</a>.
-  - <br /> <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
-
 search: false
 
 code_clipboard: false
+
+lang_switch: true
 
 meta:
   - name: description
@@ -16,12 +13,23 @@ meta:
 ---
 # Programming Language Comparison Site Index
 
+
+## Choose Different Language
+
+> Current Language is TEMPLATE 
+
+* [English](/en)
+
+## Site Index
+
 > This is a site index for the entire website.
 > All pages are accessible from here.
 > To go to the home page, click the first link in the list.
 
-* [Homepage - home.html](home.html)
+* [Test Page - test.html](test.html)
 * [General Purpose Programming Languages - gppl.html](gppl.html) 
+
+### Other Possible Pages
 
 <!-- * [Example Pages](link) -->
 <!-- * [Game Scripting Languages]() -->

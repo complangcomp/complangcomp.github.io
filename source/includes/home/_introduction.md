@@ -1,2 +1,2 @@
 # Introduction
-Welcome to Programming Languages Comparisons (Prog Lang Comp or PLC for short).
+Welcome to Computer Languages Comparisons (Comp Lang Comp or CLC for short).
