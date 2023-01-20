@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <base href="/__/"/>
+        <meta
+            name="description"
+            content="Programming Language Comparison Home"
+        >
+    <title>PL Compare</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-d12c13fd.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-5c11ce04.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all_nosearch-18c3ed8e.js" defer="defer"></script>
+
+  </head>
+
+  <body class="__ ___index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="home.html"><img src="../images/logo-27935034.png" class="logo" alt="" /></a>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#programming-language-comparison-site-index" class="toc-h1 toc-link" data-title="Programming Language Comparison Site Index">Programming Language Comparison Site Index</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#choose-different-language" class="toc-h2 toc-link" data-title="Choose Different Language">Choose Different Language</a>
+                  </li>
+                  <li>
+                    <a href="#site-index" class="toc-h2 toc-link" data-title="Site Index">Site Index</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+      <ul class="toc-footer">
+            <li>
+            <a href="/en/index.html">ENGLISH (en)</a>
+            </li>
+          <hr/>
+          <li>This project can be found on <br/> <a href='https://github.com/SurajSSingh/programming-languages-comparison'> GitHub </a> provided under <br /> the <a href='https://www.apache.org/licenses/LICENSE-2.0'> Apache 2.0 License </a></li>
+          <li><br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />The content is licensed under a <br /> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons <br /> Attribution-ShareAlike <br /> 4.0 International License</a>.</li>
+          <li><br /> <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='programming-language-comparison-site-index'>Programming Language Comparison Site Index</h1><h2 id='choose-different-language'>Choose Different Language</h2>
+<blockquote>
+<p>Current Language is TEMPLATE </p>
+</blockquote>
+
+<ul>
+<li><a href="/en">English</a></li>
+</ul>
+<h2 id='site-index'>Site Index</h2>
+<blockquote>
+<p>This is a site index for the entire website.
+All pages are accessible from here.
+To go to the home page, click the first link in the list.</p>
+</blockquote>
+
+<ul>
+<li><a href="test.html">Test Page - test.html</a></li>
+<li><a href="gppl.html">General Purpose Programming Languages - gppl.html</a> </li>
+</ul>
+<h3 id='other-possible-pages'>Other Possible Pages</h3>
+<!-- * [Example Pages](link) -->
+
+<!-- * [Game Scripting Languages]() -->
+
+<!-- * [HTML Preprocessor]() -->
+
+<!-- * [CSS Preprocessor]() -->
+
+<!-- * [Javascript Transpiler]() -->
+
+<!-- * [Javascript Frameworks]() -->
+
+<!-- * [Shell Languages]() -->
+
+<!-- * [Database Languages]() -->
+
+<!-- * [Configuration Languages]() -->
+
+<!-- * [Assembly Languages]() -->
+
+<!-- * [Shader Languages]() -->
+
+<!-- * [Visual Languages]() -->
+
+<!-- * [Non-English Programming Languages]() -->
+
+<!-- * [Esoteric Programming Languages]() -->
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>

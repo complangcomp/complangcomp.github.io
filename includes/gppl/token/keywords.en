@@ -1,0 +1,153 @@
+<h2 id='keyword-token'>Keyword Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// From https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/</span>
+<span class="k">abstract</span>
+<span class="k">as</span>
+<span class="k">base</span>
+<span class="kt">bool</span>
+<span class="k">break</span>
+<span class="kt">byte</span>
+<span class="k">case</span>
+<span class="k">catch</span>
+<span class="kt">char</span>
+<span class="k">checked</span>
+<span class="k">class</span>
+<span class="nc">const</span>
+<span class="k">continue</span>
+<span class="kt">decimal</span>
+<span class="k">default</span>
+<span class="k">delegate</span>
+<span class="k">do</span>
+<span class="kt">double</span>
+<span class="k">else</span>
+<span class="k">enum</span>
+<span class="k">event</span>
+<span class="k">explicit</span>
+<span class="k">extern</span>
+<span class="k">false</span>
+<span class="k">finally</span>
+<span class="k">fixed</span>
+<span class="kt">float</span>
+<span class="k">for</span>
+<span class="k">foreach</span>
+<span class="k">goto</span>
+<span class="k">if</span>
+<span class="k">implicit</span>
+<span class="k">in</span>
+<span class="kt">int</span>
+<span class="k">interface</span>
+<span class="nc">internal</span>
+<span class="k">is</span>
+<span class="k">lock</span>
+<span class="kt">long</span>
+<span class="k">namespace</span>
+<span class="nn">new</span>
+<span class="k">null</span>
+<span class="kt">object</span>
+<span class="k">operator</span>
+<span class="k">out</span>
+<span class="k">override</span>
+<span class="k">params</span>
+<span class="k">private</span>
+<span class="k">protected</span>
+<span class="k">public</span>
+<span class="k">readonly</span>
+<span class="k">ref</span>
+<span class="k">return</span>
+<span class="kt">sbyte</span>
+<span class="k">sealed</span>
+<span class="kt">short</span>
+<span class="k">sizeof</span>
+<span class="k">stackalloc</span>
+<span class="k">static</span>
+<span class="kt">string</span>
+<span class="k">struct</span>
+<span class="nc">switch</span>
+<span class="k">this</span>
+<span class="k">throw</span>
+<span class="k">true</span>
+<span class="k">try</span>
+<span class="k">typeof</span>
+<span class="kt">uint</span>
+<span class="kt">ulong</span>
+<span class="k">unchecked</span>
+<span class="k">unsafe</span>
+<span class="kt">ushort</span>
+<span class="k">using</span>
+<span class="nn">virtual</span>
+<span class="k">void</span>
+<span class="k">volatile</span>
+<span class="k">while</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># From https://docs.python.org/3/reference/lexical_analysis.html#keywords
+</span><span class="ow">and</span>
+<span class="k">as</span>
+<span class="k">assert</span>
+<span class="k">async</span>
+<span class="k">await</span>
+<span class="k">break</span>
+<span class="k">class</span>
+<span class="nc">continue</span>
+<span class="k">def</span>
+<span class="nf">del</span>
+<span class="k">elif</span>
+<span class="k">else</span>
+<span class="k">except</span>
+<span class="bp">False</span>
+<span class="k">finally</span>
+<span class="k">for</span>
+<span class="kn">from</span>
+<span class="nn">global</span>
+<span class="kn">import</span>
+<span class="k">if</span>
+<span class="ow">in</span>
+<span class="ow">is</span>
+<span class="k">lambda</span>
+<span class="ow">not</span>
+<span class="bp">None</span>   
+<span class="k">nonlocal</span>
+<span class="ow">or</span>
+<span class="k">pass</span>
+<span class="k">raise</span>
+<span class="k">return</span>
+<span class="bp">True</span>
+<span class="k">try</span>
+<span class="k">while</span>
+<span class="k">with</span>
+<span class="k">yield</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// From https://doc.rust-lang.org/reference/keywords.html</span>
+<span class="c1">//         Strict Lexer Token</span>
+<span class="k">as</span>      <span class="c1">// KW_AS</span>
+<span class="k">break</span>   <span class="c1">// KW_BREAK</span>
+<span class="k">const</span>   <span class="c1">// KW_CONST</span>
+<span class="k">continue</span><span class="c1">// KW_CONTINUE</span>
+<span class="k">crate</span>   <span class="c1">// KW_CRATE</span>
+<span class="k">else</span>    <span class="c1">// KW_ELSE</span>
+<span class="k">enum</span>    <span class="c1">// KW_ENUM</span>
+<span class="k">extern</span>  <span class="c1">// KW_EXTERN</span>
+<span class="k">false</span>   <span class="c1">// KW_FALSE</span>
+<span class="k">fn</span>      <span class="c1">// KW_FN</span>
+<span class="k">for</span>     <span class="c1">// KW_FOR</span>
+<span class="k">if</span>      <span class="c1">// KW_IF</span>
+<span class="k">impl</span>    <span class="c1">// KW_IMPL</span>
+<span class="k">in</span>      <span class="c1">// KW_IN</span>
+<span class="k">let</span>     <span class="c1">// KW_LET</span>
+<span class="k">loop</span>    <span class="c1">// KW_LOOP</span>
+<span class="k">match</span>   <span class="c1">// KW_MATCH</span>
+<span class="k">mod</span>     <span class="c1">// KW_MOD</span>
+<span class="k">move</span>    <span class="c1">// KW_MOVE</span>
+<span class="k">mut</span>     <span class="c1">// KW_MUT</span>
+<span class="k">pub</span>     <span class="c1">// KW_PUB</span>
+<span class="k">ref</span>     <span class="c1">// KW_REF</span>
+<span class="k">return</span>  <span class="c1">// KW_RETURN</span>
+<span class="k">self</span>    <span class="c1">// KW_SELFVALUE</span>
+<span class="k">Self</span>    <span class="c1">// KW_SELFTYPE</span>
+<span class="k">static</span>  <span class="c1">// KW_STATIC</span>
+<span class="k">struct</span>  <span class="c1">// KW_STRUCT</span>
+<span class="k">super</span>   <span class="c1">// KW_SUPER</span>
+<span class="k">trait</span>   <span class="c1">// KW_TRAIT</span>
+<span class="k">true</span>    <span class="c1">// KW_TRUE</span>
+<span class="k">type</span>    <span class="c1">// KW_TYPE</span>
+<span class="k">unsafe</span>  <span class="c1">// KW_UNSAFE</span>
+<span class="k">use</span>     <span class="c1">// KW_USE</span>
+<span class="k">where</span>   <span class="c1">// KW_WHERE</span>
+<span class="k">while</span>   <span class="c1">// KW_WHILE</span>
+</code></pre></div>
+<p>Keywords are re</p>

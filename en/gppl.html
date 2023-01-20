@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <base href="/en/gppl.html"/>
+        <meta
+            name="description"
+            content="General Purpose Programming Language Comparison"
+        >
+    <title>GPPL Compare</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-d12c13fd.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-5c11ce04.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-b12a2749.js" defer="defer"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="en en_gppl" data-languages="[&quot;csharp&quot;,&quot;python&quot;,&quot;rust&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="home.html"><img src="../images/logo-27935034.png" class="logo" alt="" /></a>
+        <div class="lang-selector">
+              <a href="#" data-language-name="csharp">C#</a>
+              <a href="#" data-language-name="python">Python</a>
+              <a href="#" data-language-name="rust">Rust</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#about" class="toc-h2 toc-link" data-title="About">About</a>
+                  </li>
+                  <li>
+                    <a href="#languages" class="toc-h2 toc-link" data-title="Languages">Languages</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#comments" class="toc-h1 toc-link" data-title="Comments">Comments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#line-comments" class="toc-h2 toc-link" data-title="Line Comments">Line Comments</a>
+                  </li>
+                  <li>
+                    <a href="#block-comments" class="toc-h2 toc-link" data-title="Block Comments">Block Comments</a>
+                  </li>
+                  <li>
+                    <a href="#documentation-comments" class="toc-h2 toc-link" data-title="Documentation Comments">Documentation Comments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#token" class="toc-h1 toc-link" data-title="Token">Token</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#literal-tokens" class="toc-h2 toc-link" data-title="Literal Tokens">Literal Tokens</a>
+                  </li>
+                  <li>
+                    <a href="#keyword-token" class="toc-h2 toc-link" data-title="Keyword Token">Keyword Token</a>
+                  </li>
+                  <li>
+                    <a href="#operator-token" class="toc-h2 toc-link" data-title="Operator Token">Operator Token</a>
+                  </li>
+                  <li>
+                    <a href="#identifier-token" class="toc-h2 toc-link" data-title="Identifier Token">Identifier Token</a>
+                  </li>
+                  <li>
+                    <a href="#reserved-token" class="toc-h2 toc-link" data-title="Reserved Token">Reserved Token</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#type" class="toc-h1 toc-link" data-title="Type">Type</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#atomic-types" class="toc-h2 toc-link" data-title="Atomic Types">Atomic Types</a>
+                  </li>
+                  <li>
+                    <a href="#composite-type" class="toc-h2 toc-link" data-title="Composite Type">Composite Type</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#expression" class="toc-h1 toc-link" data-title="Expression">Expression</a>
+          </li>
+          <li>
+            <a href="#statement" class="toc-h1 toc-link" data-title="Statement">Statement</a>
+          </li>
+          <li>
+            <a href="#variable" class="toc-h1 toc-link" data-title="Variable">Variable</a>
+          </li>
+          <li>
+            <a href="#callable-unit" class="toc-h1 toc-link" data-title="Callable Unit">Callable Unit</a>
+          </li>
+          <li>
+            <a href="#control-flow" class="toc-h1 toc-link" data-title="Control Flow">Control Flow</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#sequence" class="toc-h2 toc-link" data-title="Sequence">Sequence</a>
+                  </li>
+                  <li>
+                    <a href="#selection" class="toc-h2 toc-link" data-title="Selection">Selection</a>
+                  </li>
+                  <li>
+                    <a href="#repetition" class="toc-h2 toc-link" data-title="Repetition">Repetition</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+      <ul class="toc-footer">
+            <li>
+            <a href="/en/gppl.html">English</a>
+            </li>
+          <hr/>
+            <li><p>GPPL<p></li>
+            <hr/>
+          <li>This project can be found on <br/> <a href='https://github.com/SurajSSingh/programming-languages-comparison'> GitHub </a> provided under <br /> the <a href='https://www.apache.org/licenses/LICENSE-2.0'> Apache 2.0 License </a></li>
+          <li><br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />The content is licensed under a <br /> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons <br /> Attribution-ShareAlike <br /> 4.0 International License</a>.</li>
+          <li><br /> <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Comparing General Programming Language</p>
+<h2 id='about'>About</h2>
+<p>This page provides a comparison between many general purpose programming languages. </p>
+<h2 id='languages'>Languages</h2>
+<blockquote>
+<p>Introduction to each of the supported languages.
+Also includes a numbered list of sources referenced.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// Sources and information about the C# language</span>
+<span class="c1">// [1]: https://learn.microsoft.com/en-us/dotnet/csharp/</span>
+<span class="c1">// </span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># Sources and information about the Python language
+# [1]: https://docs.python.org/3/reference/index.html
+# 
+</span></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Sources and information about the Rust language</span>
+<span class="c1">// [1]: https://doc.rust-lang.org/reference/index.html</span>
+<span class="c1">// </span>
+</code></pre></div>
+<p>The current version for each of the languages are defined in the table.</p>
+
+<table><thead>
+<tr>
+<th>Language Name</th>
+<th>Earliest Working Version</th>
+<th>Latest Working Version</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>C#</td>
+<td>???</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>???</td>
+<td>3.7</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td>???</td>
+<td>1.64.0</td>
+</tr>
+</tbody></table>
+
+<p>Version should try to generally work with new version.</p>
+<h1 id='comments'>Comments</h1>
+<p>These are pieces of code that are generally ignored by the compiler or interpreter. Comments help programmers with providing extra information about the code without executing it.</p>
+<h2 id='line-comments'>Line Comments</h2>
+<p>Line comments are comments that run from the start of some symbol to the end of the line.</p>
+
+<blockquote>
+<p>Line Comments between language</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// This is a single line comment</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># This is a single line comment
+</span></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// This is a single line comment</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Start Symbol</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>//</td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td>#</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+<h2 id='block-comments'>Block Comments</h2>
+<p>Block comments are comments that run from a certain start symbol to an end symbol. This means that comments can cover a small span of text (such as a single word within the same line) or large span of text (such as a comment that spans multiple lines).</p>
+
+<blockquote>
+<p>Block Comments (or equivalent) between language</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="cm">/*
+    This
+    is
+    a
+    block
+    comment
+*/</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="s">"""
+    This
+    is
+    a
+    multi-line
+    string
+    (Not a true block comment but equivalent)
+"""</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="cm">/*
+    This
+    is
+    a
+    block
+    comment
+*/</span>
+</code></pre></div>
+<p>Block comments can also be nested sometimes.</p>
+
+<table><thead>
+<tr>
+<th>Has Block Comments?</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Yes, Directly</td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td>Sort of, Indirectly</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>No</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Start Block Comment Symbol</th>
+<th>Start Block Comment Symbol</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>/*</td>
+<td>*/</td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Block Comment Alternative</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Multi-Line Strings</td>
+<td>Python</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='documentation-comments'>Documentation Comments</h2>
+<p>Comments that document your code outside of the source code and are generally used to generate documentation. Not all languages have this facility built into their compiler or interpreter.</p>
+
+<blockquote>
+<p>Documentation comment examples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">/// &lt;summary&gt; This is a documentation comment that attaches to a function or class &lt;/summary&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="s">""" This is a documentation comment that goes under a function or class"""</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="cd">//! This is an inner documentation Comment</span>
+<span class="cd">/// This is an inner documentation Comment</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Has Documentation Comments</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Yes</td>
+<td>C#, Python, Rust</td>
+</tr>
+<tr>
+<td>No</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Documentation Markup Language</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Markdown</td>
+<td>Rust</td>
+</tr>
+<tr>
+<td>ReStructureTextPython</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>XML</td>
+<td>C#</td>
+</tr>
+</tbody></table>
+<h1 id='token'>Token</h1>
+<p>These are the smallest meaningful value known by the program. They often take the form of literal values, identifiers, and reserved keywords and operators. There are many different kinds of tokens unique to each programming language, so this section will focus on the general categories often found between languages. </p>
+
+<p>Tokens are created during the lexing stage of the parser.</p>
+<h2 id='literal-tokens'>Literal Tokens</h2>
+<p>These tokens are seen as the exact value they represent and hold no other meaning besides themselves. </p>
+<h2 id='keyword-token'>Keyword Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// From https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/</span>
+<span class="k">abstract</span>
+<span class="k">as</span>
+<span class="k">base</span>
+<span class="kt">bool</span>
+<span class="k">break</span>
+<span class="kt">byte</span>
+<span class="k">case</span>
+<span class="k">catch</span>
+<span class="kt">char</span>
+<span class="k">checked</span>
+<span class="k">class</span>
+<span class="nc">const</span>
+<span class="k">continue</span>
+<span class="kt">decimal</span>
+<span class="k">default</span>
+<span class="k">delegate</span>
+<span class="k">do</span>
+<span class="kt">double</span>
+<span class="k">else</span>
+<span class="k">enum</span>
+<span class="k">event</span>
+<span class="k">explicit</span>
+<span class="k">extern</span>
+<span class="k">false</span>
+<span class="k">finally</span>
+<span class="k">fixed</span>
+<span class="kt">float</span>
+<span class="k">for</span>
+<span class="k">foreach</span>
+<span class="k">goto</span>
+<span class="k">if</span>
+<span class="k">implicit</span>
+<span class="k">in</span>
+<span class="kt">int</span>
+<span class="k">interface</span>
+<span class="nc">internal</span>
+<span class="k">is</span>
+<span class="k">lock</span>
+<span class="kt">long</span>
+<span class="k">namespace</span>
+<span class="nn">new</span>
+<span class="k">null</span>
+<span class="kt">object</span>
+<span class="k">operator</span>
+<span class="k">out</span>
+<span class="k">override</span>
+<span class="k">params</span>
+<span class="k">private</span>
+<span class="k">protected</span>
+<span class="k">public</span>
+<span class="k">readonly</span>
+<span class="k">ref</span>
+<span class="k">return</span>
+<span class="kt">sbyte</span>
+<span class="k">sealed</span>
+<span class="kt">short</span>
+<span class="k">sizeof</span>
+<span class="k">stackalloc</span>
+<span class="k">static</span>
+<span class="kt">string</span>
+<span class="k">struct</span>
+<span class="nc">switch</span>
+<span class="k">this</span>
+<span class="k">throw</span>
+<span class="k">true</span>
+<span class="k">try</span>
+<span class="k">typeof</span>
+<span class="kt">uint</span>
+<span class="kt">ulong</span>
+<span class="k">unchecked</span>
+<span class="k">unsafe</span>
+<span class="kt">ushort</span>
+<span class="k">using</span>
+<span class="nn">virtual</span>
+<span class="k">void</span>
+<span class="k">volatile</span>
+<span class="k">while</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># From https://docs.python.org/3/reference/lexical_analysis.html#keywords
+</span><span class="ow">and</span>
+<span class="k">as</span>
+<span class="k">assert</span>
+<span class="k">async</span>
+<span class="k">await</span>
+<span class="k">break</span>
+<span class="k">class</span>
+<span class="nc">continue</span>
+<span class="k">def</span>
+<span class="nf">del</span>
+<span class="k">elif</span>
+<span class="k">else</span>
+<span class="k">except</span>
+<span class="bp">False</span>
+<span class="k">finally</span>
+<span class="k">for</span>
+<span class="kn">from</span>
+<span class="nn">global</span>
+<span class="kn">import</span>
+<span class="k">if</span>
+<span class="ow">in</span>
+<span class="ow">is</span>
+<span class="k">lambda</span>
+<span class="ow">not</span>
+<span class="bp">None</span>   
+<span class="k">nonlocal</span>
+<span class="ow">or</span>
+<span class="k">pass</span>
+<span class="k">raise</span>
+<span class="k">return</span>
+<span class="bp">True</span>
+<span class="k">try</span>
+<span class="k">while</span>
+<span class="k">with</span>
+<span class="k">yield</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// From https://doc.rust-lang.org/reference/keywords.html</span>
+<span class="c1">//         Strict Lexer Token</span>
+<span class="k">as</span>      <span class="c1">// KW_AS</span>
+<span class="k">break</span>   <span class="c1">// KW_BREAK</span>
+<span class="k">const</span>   <span class="c1">// KW_CONST</span>
+<span class="k">continue</span><span class="c1">// KW_CONTINUE</span>
+<span class="k">crate</span>   <span class="c1">// KW_CRATE</span>
+<span class="k">else</span>    <span class="c1">// KW_ELSE</span>
+<span class="k">enum</span>    <span class="c1">// KW_ENUM</span>
+<span class="k">extern</span>  <span class="c1">// KW_EXTERN</span>
+<span class="k">false</span>   <span class="c1">// KW_FALSE</span>
+<span class="k">fn</span>      <span class="c1">// KW_FN</span>
+<span class="k">for</span>     <span class="c1">// KW_FOR</span>
+<span class="k">if</span>      <span class="c1">// KW_IF</span>
+<span class="k">impl</span>    <span class="c1">// KW_IMPL</span>
+<span class="k">in</span>      <span class="c1">// KW_IN</span>
+<span class="k">let</span>     <span class="c1">// KW_LET</span>
+<span class="k">loop</span>    <span class="c1">// KW_LOOP</span>
+<span class="k">match</span>   <span class="c1">// KW_MATCH</span>
+<span class="k">mod</span>     <span class="c1">// KW_MOD</span>
+<span class="k">move</span>    <span class="c1">// KW_MOVE</span>
+<span class="k">mut</span>     <span class="c1">// KW_MUT</span>
+<span class="k">pub</span>     <span class="c1">// KW_PUB</span>
+<span class="k">ref</span>     <span class="c1">// KW_REF</span>
+<span class="k">return</span>  <span class="c1">// KW_RETURN</span>
+<span class="k">self</span>    <span class="c1">// KW_SELFVALUE</span>
+<span class="k">Self</span>    <span class="c1">// KW_SELFTYPE</span>
+<span class="k">static</span>  <span class="c1">// KW_STATIC</span>
+<span class="k">struct</span>  <span class="c1">// KW_STRUCT</span>
+<span class="k">super</span>   <span class="c1">// KW_SUPER</span>
+<span class="k">trait</span>   <span class="c1">// KW_TRAIT</span>
+<span class="k">true</span>    <span class="c1">// KW_TRUE</span>
+<span class="k">type</span>    <span class="c1">// KW_TYPE</span>
+<span class="k">unsafe</span>  <span class="c1">// KW_UNSAFE</span>
+<span class="k">use</span>     <span class="c1">// KW_USE</span>
+<span class="k">where</span>   <span class="c1">// KW_WHERE</span>
+<span class="k">while</span>   <span class="c1">// KW_WHILE</span>
+</code></pre></div>
+<p>Keywords are re</p>
+<h2 id='operator-token'>Operator Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code></code></pre></div><h2 id='identifier-token'>Identifier Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code></code></pre></div><h2 id='reserved-token'>Reserved Token</h2><h1 id='type'>Type</h1><h2 id='atomic-types'>Atomic Types</h2><h2 id='composite-type'>Composite Type</h2><h1 id='expression'>Expression</h1><h1 id='statement'>Statement</h1><h1 id='variable'>Variable</h1><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="kt">bool</span> <span class="n">a</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">a</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">let</span> <span class="n">a</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div><h1 id='callable-unit'>Callable Unit</h1>
+<p>Also known functions, procedures, subroutines.</p>
+<h1 id='control-flow'>Control Flow</h1>
+<p>Control flow code determines how code flows in the program.</p>
+<h2 id='sequence'>Sequence</h2><h2 id='selection'>Selection</h2>
+<p>Also known as conditional.</p>
+<h3 id='single-branch-if-condition'>Single Branch (if-condition)</h3>
+<blockquote>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">if</span><span class="p">(</span><span class="k">true</span><span class="p">){</span>
+    <span class="c1">// Code run inside</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">if</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c1"># Code runs here
+</span>    <span class="k">pass</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">if</span> <span class="k">true</span> <span class="p">{</span>
+    <span class="c1">// Code run inside</span>
+<span class="p">}</span>
+</code></pre></div><h3 id='branch-with-alternative-if-else'>Branch With Alternative (if-else)</h3>
+<blockquote>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">if</span><span class="p">(</span><span class="k">true</span><span class="p">){</span>
+    <span class="c1">// Code run inside</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">if</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c1"># Code runs here
+</span>    <span class="k">pass</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="k">pass</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">if</span> <span class="k">true</span> <span class="p">{</span>
+    <span class="c1">// Code run inside</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div><h2 id='repetition'>Repetition</h2>
+<p>Also known as iteration or looping.</p>
+
+<table><thead>
+<tr>
+<th>Langage</th>
+<th>Conditional Loop</th>
+<th>Infinite Loop</th>
+<th>Count Loop</th>
+<th>Collection Loop</th>
+<th>Other Loops</th>
+<th>General Loops</th>
+<th>Recursion</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='condition-loop'>Condition Loop</h3>
+<p>These are loops that are controlled by conditions.</p>
+<h4 id='while-loop'>While Loop</h4>
+<blockquote>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="kt">bool</span> <span class="n">condition</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">){</span>
+    <span class="c1">// Run code inside when true</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">condition</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># Run code inside when true
+</span>    <span class="k">pass</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">let</span> <span class="n">condition</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="k">while</span> <span class="n">condition</span> <span class="p">{</span>
+    <span class="c1">// Run code inside when true</span>
+<span class="p">}</span>
+</code></pre></div><h3 id='infinite-loop'>Infinite Loop</h3>
+<p>An infinite loop is a loop that has no explicit stop condition, meaning that the loop will run without end. To stop an infinite loop, one will require using some mechanism to stop the loop.</p>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">while</span><span class="p">(</span><span class="k">true</span><span class="p">){</span>
+    <span class="c1">// Do this forever.</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c1"># Do this forever
+</span>    <span class="k">pass</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">loop</span> <span class="p">{</span>
+    <span class="c1">// Do this forever</span>
+<span class="p">}</span>
+</code></pre></div><h3 id='iteration'>Iteration</h3><h4 id='count-controlled-loop'>Count Controlled Loop</h4>
+<p>This kind of loops are controlled by a number.</p>
+
+<blockquote>
+<p>A count-up look going from 0 to 10 (not including 10)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="p">++){</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..</span><span class="mi">10</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Keyword</th>
+<th>Langage</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>for</code></td>
+<td>C#, Python, Rust</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Langauge</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>for(start, end, next)</code></td>
+<td>C#</td>
+</tr>
+<tr>
+<td><code>for &lt;variable&gt; in &lt;range_iterable&gt;</code></td>
+<td>Python, Rust</td>
+</tr>
+</tbody></table>
+<h3 id='recursion'>Recursion</h3>
+<p>Recursion is a special kind of loop used by functions.</p>
+
+<blockquote>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code>
+</code></pre></div>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="csharp">C#</a>
+                <a href="#" data-language-name="python">Python</a>
+                <a href="#" data-language-name="rust">Rust</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
