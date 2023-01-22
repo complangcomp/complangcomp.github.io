@@ -15,7 +15,7 @@ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations
 under the License.
 */
-;(function () {
+; (function () {
   'use strict';
 
   var languages = [];
@@ -24,13 +24,37 @@ under the License.
   window.activateLanguage = activateLanguage;
   window.getLanguageFromQueryString = getLanguageFromQueryString;
 
+  function toggleLanguage(language) {
+    if (!language || language === "") return;
+    // Toggle the current language on or off,
+    // leaving the other languages alone.
+    // This allows selecting multiple languages.
+    $(".lang-selector a[data-language-name='" + language + "']").toggleClass('active');
+    for (var i = 0; i < languages.length; i++) {
+      if ($(".lang-selector a[data-language-name='" + languages[i] + "']").hasClass('active')) {
+        $(".highlight.tab-" + languages[i]).show();
+        $(".lang-specific." + languages[i]).show();
+      }
+      else {
+        $(".highlight.tab-" + languages[i]).hide();
+        $(".lang-specific." + languages[i]).hide();
+      }
+
+    }
+    window.recacheHeights();
+    // scroll to the new location of the position
+    if ($(window.location.hash).get(0)) {
+      $(window.location.hash).get(0).scrollIntoView(true);
+    }
+  }
+
   function activateLanguage(language) {
     if (!language) return;
     if (language === "") return;
 
     $(".lang-selector a").removeClass('active');
     $(".lang-selector a[data-language-name='" + language + "']").addClass('active');
-    for (var i=0; i < languages.length; i++) {
+    for (var i = 0; i < languages.length; i++) {
       $(".highlight.tab-" + languages[i]).hide();
       $(".lang-specific." + languages[i]).hide();
     }
@@ -141,7 +165,14 @@ under the License.
     }
 
     languages = l;
-
+    // Get all the language name for labelling with CSS
+    var langNames = {};
+    for (const item of $("[data-language-name]")) {
+      langNames[item.dataset["languageName"]] = item.text;
+    }
+    for (var i = 0; i < languages.length; i++) {
+      $(".highlight.tab-" + languages[i]).attr("data-lang", langNames[languages[i]] || languages[i]);
+    }
     var presetLanguage = getLanguageFromQueryString();
     if (presetLanguage) {
       // the language is in the URL, so use that language!
@@ -160,11 +191,12 @@ under the License.
   }
 
   // if we click on a language tab, activate that language
-  $(function() {
-    $(".lang-selector a").on("click", function() {
+  $(function () {
+    $(".lang-selector a").on("click", function () {
       var language = $(this).data("language-name");
       pushURL(language);
-      activateLanguage(language);
+      // Toggle instead of activate
+      toggleLanguage(language);
       return false;
     });
   });
