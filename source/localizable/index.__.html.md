@@ -18,7 +18,7 @@ meta:
 
 > Current Language is TEMPLATE 
 
-* [English](/en)
+* [English](../en)
 
 ## Site Index
 
