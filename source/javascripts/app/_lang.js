@@ -167,7 +167,9 @@ under the License.
     languages = l;
     // Get all the language name for labelling with CSS
     var langNames = {};
-    for (const item of $("[data-language-name]")) {
+    var dataLang = $("[data-language-name]");
+    for (var i = 0; i < dataLang.length; i++) {
+      var item = dataLang[i];
       langNames[item.dataset["languageName"]] = item.text;
     }
     for (var i = 0; i < languages.length; i++) {
