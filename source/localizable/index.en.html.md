@@ -15,9 +15,9 @@ meta:
 
 ## Choose Language
 
-> Current Language is [English](/en) (en)
+> Current Language is [English](../en) (en)
 
-* [English](/en)
+* [English](../en)
 
 ## Site Index
 

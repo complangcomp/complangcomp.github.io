@@ -1,4 +1,6 @@
-## Keyword Token
+### Strict Keyword
+
+Strict keywords are always treated as keywords.
 
 ```csharp
 // From https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/
@@ -121,13 +123,16 @@ yield
 ```
 
 ```rust
-// From https://doc.rust-lang.org/reference/keywords.html
+// From https://doc.rust-lang.org/reference/keywords.html#strict-keywords
 //         Strict Lexer Token
 as      // KW_AS
+async   // KW_ASYNC - added 2018 edition
+await   // KW_AWAIT - added 2018 edition
 break   // KW_BREAK
 const   // KW_CONST
 continue// KW_CONTINUE
 crate   // KW_CRATE
+dyn     // KW_DYN - added 2018 edition
 else    // KW_ELSE
 enum    // KW_ENUM
 extern  // KW_EXTERN
@@ -159,5 +164,3 @@ use     // KW_USE
 where   // KW_WHERE
 while   // KW_WHILE
 ```
-
-Keywords are re

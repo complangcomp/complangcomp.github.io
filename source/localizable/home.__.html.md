@@ -14,7 +14,7 @@ search: true
 
 code_clipboard: true
 
-lang_switch: true
+lang_switch: false
 
 meta:
   - name: description
