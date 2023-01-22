@@ -22,7 +22,9 @@ includes:
   # - gppl/token/literal/boolean-literal
   # - gppl/token/literal/numeric-literal
   # - gppl/token/literal/textual-literal
-  - gppl/token/keywords
+  - gppl/token/keyword
+  - gppl/token/keyword/strict
+  - gppl/token/keyword/contextual
   - gppl/token/operators
   - gppl/token/identifier
   - gppl/token/reserved
