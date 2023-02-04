@@ -1,4 +1,5 @@
-# Variable
+## Variable
+
 
 ```csharp
 bool a = true;
@@ -9,5 +10,9 @@ a = True
 ```
 
 ```rust
+// Immutable variable
 let a: bool = true;
+
+// Mutable variable
+let mut a: bool = true;
 ```
