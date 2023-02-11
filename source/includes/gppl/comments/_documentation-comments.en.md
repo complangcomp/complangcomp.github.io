@@ -13,8 +13,8 @@ Comments that document your code outside of the source code and are generally us
 ```
 
 ```rust
-//! This is an inner documentation Comment
-/// This is an inner documentation Comment
+//! This is an outer documentation comment
+/// This is an inner documentation comment
 ```
 
 
