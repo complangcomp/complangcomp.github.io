@@ -51,8 +51,10 @@ includes:
   # - gppl/type/composite/heterogeneous/struct
   - gppl/expression
   - gppl/statement
-  - gppl/variable
-  - gppl/callable-unit
+  - gppl/binding
+  - gppl/binding/variable
+  - gppl/binding/constant
+  - gppl/binding/callable-unit
   - gppl/control-flow
   - gppl/control-flow/sequence
   - gppl/control-flow/selection

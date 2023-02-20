@@ -4,7 +4,7 @@ Thank you for considering to contribute to this project!
 
 Before beginning, please read our [Code of Conduct](./CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
 
-This guide will provide a summary of how to contribute to this project. For more detail, please view the [project wiki](https://github.com/SurajSSingh/computer-languages-comparison/wiki).
+This guide will provide a summary of how to contribute to this project. For more detail, please view the [project wiki](https://github.com/comp-lang-comp/comp-lang-comp.github.io/wiki).
 
 ## New contributor guide
 To get an overview of the project, read the [README](README.md) file. Here are some resources provided by GitHub to help you get started with open source contributions:

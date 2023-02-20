@@ -31,7 +31,7 @@ Internationalization (i18n) support.
   page_content = page_content.gsub(t_reg){|t| eval(t)}
 %>
 <!doctype html>
-<html lang="<% t(:code) || 'en' %>">
+<html lang="<%= t(:code) || 'en' %>">
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -66,7 +66,9 @@ Internationalization (i18n) support.
 
     <% if current_page.data.code_clipboard %>
     <script>
-      $(function() { setupCodeCopy(); });
+      window.addEventListener('load', () => {
+        $(function() { setupCodeCopy(); });
+      });
     </script>
     <% end %>
   </head>
@@ -132,7 +134,7 @@ Internationalization (i18n) support.
             <% end %>
             <hr/>
         <% end %>
-          <li>This project can be found on <br/> <a href='https://github.com/SurajSSingh/programming-languages-comparison'> GitHub </a> provided under <br /> the <a href='https://www.apache.org/licenses/LICENSE-2.0'> Apache 2.0 License </a></li>
+          <li>This project can be found on <br/> <a href='https://github.com/comp-lang-comp/comp-lang-comp.github.io'> GitHub </a> provided under <br /> the <a href='https://www.apache.org/licenses/LICENSE-2.0'> Apache 2.0 License </a></li>
           <li><br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />The content is licensed under a <br /> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons <br /> Attribution-ShareAlike <br /> 4.0 International License</a>.</li>
           <li><br /> <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>

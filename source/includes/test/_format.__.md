@@ -1,21 +1,24 @@
 <!-- This is an HTML Comment, will not be rendered -->
 
-# Section Title 
-
 <!-- 
     Only a single section title per page
     (e.g., cannot have #title then ## subtitle in the same file).
     Add additional `#` to control subheadings, up to 6.
+
+    Keep Number of `#` same as level from the same 
 -->
+# Section Title 
+
 
 <!-- 
     Layout every section should follow:
-        1. Code Introduction Annotation (either 0 or 1 sections)
-        2. Code Blocks for supported languages (N == # of languages)
-        3. Code Conclusion Annotation (either 0 or 1 sections)
-        4. Plain Text Introduction (1)
-        5. Paragraph and Table comparison (0 to X == # of tables) 
-        6. Plain Text Conclusion (either 0 or 1) 
+        1. 
+        2. Code Introduction Annotation (either 0 or 1 sections)
+        3. Code Blocks for supported languages (N == # of languages)
+        4. Code Conclusion Annotation (either 0 or 1 sections)
+        5. Plain Text Introduction (1)
+        6. Paragraph and Table comparison (0 to X == # of tables) 
+        7. Plain Text Conclusion (either 0 or 1) 
  -->
 
 > Code Introductory annotation
