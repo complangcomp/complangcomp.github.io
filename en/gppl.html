@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -290,7 +290,9 @@
       <script src="../javascripts/all-4be1d18e.js" defer="defer"></script>
 
     <script>
-      $(function() { setupCodeCopy(); });
+      window.addEventListener('load', () => {
+        $(function() { setupCodeCopy(); });
+      });
     </script>
   </head>
 
@@ -376,10 +378,18 @@
             <a href="#statement" class="toc-h1 toc-link" data-title="Statement">Statement</a>
           </li>
           <li>
-            <a href="#variable" class="toc-h1 toc-link" data-title="Variable">Variable</a>
-          </li>
-          <li>
-            <a href="#callable-unit" class="toc-h1 toc-link" data-title="Callable Unit">Callable Unit</a>
+            <a href="#binding" class="toc-h1 toc-link" data-title="Binding">Binding</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#variable" class="toc-h2 toc-link" data-title="Variable">Variable</a>
+                  </li>
+                  <li>
+                    <a href="#constant" class="toc-h2 toc-link" data-title="Constant">Constant</a>
+                  </li>
+                  <li>
+                    <a href="#callable-unit" class="toc-h2 toc-link" data-title="Callable Unit">Callable Unit</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#control-flow" class="toc-h1 toc-link" data-title="Control Flow">Control Flow</a>
@@ -403,7 +413,7 @@
           <hr/>
             <li><p>GPPL<p></li>
             <hr/>
-          <li>This project can be found on <br/> <a href='https://github.com/SurajSSingh/programming-languages-comparison'> GitHub </a> provided under <br /> the <a href='https://www.apache.org/licenses/LICENSE-2.0'> Apache 2.0 License </a></li>
+          <li>This project can be found on <br/> <a href='https://github.com/comp-lang-comp/comp-lang-comp.github.io'> GitHub </a> provided under <br /> the <a href='https://www.apache.org/licenses/LICENSE-2.0'> Apache 2.0 License </a></li>
           <li><br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />The content is licensed under a <br /> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons <br /> Attribution-ShareAlike <br /> 4.0 International License</a>.</li>
           <li><br /> <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
@@ -646,217 +656,58 @@ Also includes a numbered list of sources referenced.</p>
 <h3 id='strict-keyword'>Strict Keyword</h3>
 <p>Strict keywords are always treated as keywords.</p>
 <div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// From https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/</span>
-<span class="k">abstract</span>
-<span class="k">as</span>
-<span class="k">base</span>
-<span class="kt">bool</span>
-<span class="k">break</span>
-<span class="kt">byte</span>
-<span class="k">case</span>
-<span class="k">catch</span>
-<span class="kt">char</span>
-<span class="k">checked</span>
-<span class="k">class</span>
-<span class="nc">const</span>
-<span class="k">continue</span>
-<span class="kt">decimal</span>
-<span class="k">default</span>
-<span class="k">delegate</span>
-<span class="k">do</span>
-<span class="kt">double</span>
-<span class="k">else</span>
-<span class="k">enum</span>
-<span class="k">event</span>
-<span class="k">explicit</span>
-<span class="k">extern</span>
-<span class="k">false</span>
-<span class="k">finally</span>
-<span class="k">fixed</span>
-<span class="kt">float</span>
-<span class="k">for</span>
-<span class="k">foreach</span>
-<span class="k">goto</span>
-<span class="k">if</span>
-<span class="k">implicit</span>
-<span class="k">in</span>
-<span class="kt">int</span>
-<span class="k">interface</span>
-<span class="nc">internal</span>
-<span class="k">is</span>
-<span class="k">lock</span>
-<span class="kt">long</span>
-<span class="k">namespace</span>
-<span class="nn">new</span>
-<span class="k">null</span>
-<span class="kt">object</span>
-<span class="k">operator</span>
-<span class="k">out</span>
-<span class="k">override</span>
-<span class="k">params</span>
-<span class="k">private</span>
-<span class="k">protected</span>
-<span class="k">public</span>
-<span class="k">readonly</span>
-<span class="k">ref</span>
-<span class="k">return</span>
-<span class="kt">sbyte</span>
-<span class="k">sealed</span>
-<span class="kt">short</span>
-<span class="k">sizeof</span>
-<span class="k">stackalloc</span>
-<span class="k">static</span>
-<span class="kt">string</span>
-<span class="k">struct</span>
-<span class="nc">switch</span>
-<span class="k">this</span>
-<span class="k">throw</span>
-<span class="k">true</span>
-<span class="k">try</span>
-<span class="k">typeof</span>
-<span class="kt">uint</span>
-<span class="kt">ulong</span>
-<span class="k">unchecked</span>
-<span class="k">unsafe</span>
-<span class="kt">ushort</span>
-<span class="k">using</span>
-<span class="nn">virtual</span>
-<span class="k">void</span>
-<span class="k">volatile</span>
-<span class="k">while</span>
+<span class="c1">// Each keyword is separated by comma (,)</span>
+<span class="k">abstract</span> <span class="p">,</span> <span class="k">as</span> <span class="p">,</span> <span class="k">base</span> <span class="p">,</span> <span class="kt">bool</span> <span class="p">,</span> <span class="k">break</span> <span class="p">,</span> <span class="kt">byte</span> <span class="p">,</span> <span class="k">case</span> <span class="p">,</span> <span class="k">catch</span> <span class="p">,</span> <span class="kt">char</span> <span class="p">,</span> <span class="k">checked</span> <span class="p">,</span> <span class="k">class</span> <span class="err">,</span> 
+<span class="nc">const</span> <span class="p">,</span> <span class="k">continue</span> <span class="p">,</span> <span class="kt">decimal</span> <span class="p">,</span> <span class="k">default</span> <span class="p">,</span> <span class="k">delegate</span> <span class="p">,</span> <span class="k">do</span> <span class="p">,</span> <span class="kt">double</span> <span class="p">,</span> <span class="k">else</span> <span class="p">,</span> <span class="k">enum</span> <span class="p">,</span> <span class="k">event</span> <span class="p">,</span> 
+<span class="k">explicit</span> <span class="p">,</span> <span class="k">extern</span> <span class="p">,</span> <span class="k">false</span> <span class="p">,</span> <span class="k">finally</span> <span class="p">,</span> <span class="k">fixed</span> <span class="p">,</span> <span class="kt">float</span> <span class="p">,</span> <span class="k">for</span> <span class="p">,</span> <span class="k">foreach</span> <span class="p">,</span> <span class="k">goto</span> <span class="p">,</span> <span class="k">if</span> <span class="p">,</span> 
+<span class="k">implicit</span> <span class="p">,</span> <span class="k">in</span> <span class="p">,</span> <span class="kt">int</span> <span class="p">,</span> <span class="k">interface</span> <span class="err">,</span> <span class="nc">internal</span> <span class="p">,</span> <span class="k">is</span> <span class="p">,</span> <span class="k">lock</span> <span class="p">,</span> <span class="kt">long</span> <span class="p">,</span> <span class="k">namespace</span> <span class="err">,</span> <span class="nn">new</span> <span class="p">,</span> <span class="k">null</span> <span class="p">,</span> 
+<span class="kt">object</span> <span class="p">,</span> <span class="k">operator</span> <span class="p">,</span> <span class="k">out</span> <span class="p">,</span> <span class="k">override</span> <span class="p">,</span> <span class="k">params</span> <span class="p">,</span> <span class="k">private</span> <span class="p">,</span> <span class="k">protected</span> <span class="p">,</span> <span class="k">public</span> <span class="p">,</span> <span class="k">readonly</span> <span class="p">,</span> 
+<span class="k">ref</span> <span class="p">,</span> <span class="k">return</span> <span class="p">,</span> <span class="kt">sbyte</span> <span class="p">,</span> <span class="k">sealed</span> <span class="p">,</span> <span class="kt">short</span> <span class="p">,</span> <span class="k">sizeof</span> <span class="p">,</span> <span class="k">stackalloc</span> <span class="p">,</span> <span class="k">static</span> <span class="p">,</span> <span class="kt">string</span> <span class="p">,</span> <span class="k">struct</span> <span class="err">,</span> 
+<span class="nc">switch</span> <span class="p">,</span> <span class="k">this</span> <span class="p">,</span> <span class="k">throw</span> <span class="p">,</span> <span class="k">true</span> <span class="p">,</span> <span class="k">try</span> <span class="p">,</span> <span class="k">typeof</span> <span class="p">,</span> <span class="kt">uint</span> <span class="p">,</span> <span class="kt">ulong</span> <span class="p">,</span> <span class="k">unchecked</span> <span class="p">,</span> <span class="k">unsafe</span> <span class="p">,</span> <span class="kt">ushort</span> <span class="p">,</span> 
+<span class="k">using</span> <span class="err">,</span> <span class="nn">virtual</span> <span class="p">,</span> <span class="k">void</span> <span class="p">,</span> <span class="k">volatile</span> <span class="p">,</span> <span class="k">while</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># From https://docs.python.org/3/reference/lexical_analysis.html#keywords
-</span><span class="ow">and</span>
-<span class="k">as</span>
-<span class="k">assert</span>
-<span class="k">async</span>
-<span class="k">await</span>
-<span class="k">break</span>
-<span class="k">class</span>
-<span class="nc">continue</span>
-<span class="k">def</span>
-<span class="nf">del</span>
-<span class="k">elif</span>
-<span class="k">else</span>
-<span class="k">except</span>
-<span class="bp">False</span>
-<span class="k">finally</span>
-<span class="k">for</span>
-<span class="kn">from</span>
-<span class="nn">global</span>
-<span class="kn">import</span>
-<span class="k">if</span>
-<span class="ow">in</span>
-<span class="ow">is</span>
-<span class="k">lambda</span>
-<span class="ow">not</span>
-<span class="bp">None</span>   
-<span class="k">nonlocal</span>
-<span class="ow">or</span>
-<span class="k">pass</span>
-<span class="k">raise</span>
-<span class="k">return</span>
-<span class="bp">True</span>
-<span class="k">try</span>
-<span class="k">while</span>
-<span class="k">with</span>
-<span class="k">yield</span>
+# Each keyword is separated by comma (,)
+</span><span class="ow">and</span> <span class="p">,</span> <span class="k">as</span> <span class="p">,</span> <span class="k">assert</span> <span class="p">,</span> <span class="k">async</span> <span class="p">,</span> <span class="k">await</span> <span class="p">,</span> <span class="k">break</span> <span class="p">,</span> <span class="k">class</span> <span class="err">, </span><span class="nc">continue</span> <span class="p">,</span> <span class="k">def</span> <span class="err">, </span><span class="nf">del</span> <span class="p">,</span> 
+<span class="k">elif</span> <span class="p">,</span> <span class="k">else</span> <span class="p">,</span> <span class="k">except</span> <span class="p">,</span> <span class="bp">False</span> <span class="p">,</span> <span class="k">finally</span> <span class="p">,</span> <span class="k">for</span> <span class="p">,</span> <span class="k">from</span> <span class="p">,</span> <span class="k">global</span> <span class="p">,</span> <span class="k">import</span> <span class="p">,</span> 
+<span class="k">if</span> <span class="p">,</span> <span class="ow">in</span> <span class="p">,</span> <span class="ow">is</span> <span class="p">,</span> <span class="k">lambda</span> <span class="p">,</span> <span class="ow">not</span> <span class="p">,</span> <span class="bp">None</span> <span class="p">,</span> <span class="k">nonlocal</span> <span class="p">,</span> <span class="ow">or</span> <span class="p">,</span> <span class="k">pass</span> <span class="p">,</span> <span class="k">raise</span> <span class="p">,</span> 
+<span class="k">return</span> <span class="p">,</span> <span class="bp">True</span> <span class="p">,</span> <span class="k">try</span> <span class="p">,</span> <span class="k">while</span> <span class="p">,</span> <span class="k">with</span> <span class="p">,</span> <span class="k">yield</span>
 </code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// From https://doc.rust-lang.org/reference/keywords.html#strict-keywords</span>
-<span class="c1">//         Strict Lexer Token</span>
-<span class="k">as</span>      <span class="c1">// KW_AS</span>
-<span class="k">async</span>   <span class="c1">// KW_ASYNC - added 2018 edition</span>
-<span class="k">await</span>   <span class="c1">// KW_AWAIT - added 2018 edition</span>
-<span class="k">break</span>   <span class="c1">// KW_BREAK</span>
-<span class="k">const</span>   <span class="c1">// KW_CONST</span>
-<span class="k">continue</span><span class="c1">// KW_CONTINUE</span>
-<span class="k">crate</span>   <span class="c1">// KW_CRATE</span>
-<span class="k">dyn</span>     <span class="c1">// KW_DYN - added 2018 edition</span>
-<span class="k">else</span>    <span class="c1">// KW_ELSE</span>
-<span class="k">enum</span>    <span class="c1">// KW_ENUM</span>
-<span class="k">extern</span>  <span class="c1">// KW_EXTERN</span>
-<span class="k">false</span>   <span class="c1">// KW_FALSE</span>
-<span class="k">fn</span>      <span class="c1">// KW_FN</span>
-<span class="k">for</span>     <span class="c1">// KW_FOR</span>
-<span class="k">if</span>      <span class="c1">// KW_IF</span>
-<span class="k">impl</span>    <span class="c1">// KW_IMPL</span>
-<span class="k">in</span>      <span class="c1">// KW_IN</span>
-<span class="k">let</span>     <span class="c1">// KW_LET</span>
-<span class="k">loop</span>    <span class="c1">// KW_LOOP</span>
-<span class="k">match</span>   <span class="c1">// KW_MATCH</span>
-<span class="k">mod</span>     <span class="c1">// KW_MOD</span>
-<span class="k">move</span>    <span class="c1">// KW_MOVE</span>
-<span class="k">mut</span>     <span class="c1">// KW_MUT</span>
-<span class="k">pub</span>     <span class="c1">// KW_PUB</span>
-<span class="k">ref</span>     <span class="c1">// KW_REF</span>
-<span class="k">return</span>  <span class="c1">// KW_RETURN</span>
-<span class="k">self</span>    <span class="c1">// KW_SELFVALUE</span>
-<span class="k">Self</span>    <span class="c1">// KW_SELFTYPE</span>
-<span class="k">static</span>  <span class="c1">// KW_STATIC</span>
-<span class="k">struct</span>  <span class="c1">// KW_STRUCT</span>
-<span class="k">super</span>   <span class="c1">// KW_SUPER</span>
-<span class="k">trait</span>   <span class="c1">// KW_TRAIT</span>
-<span class="k">true</span>    <span class="c1">// KW_TRUE</span>
-<span class="k">type</span>    <span class="c1">// KW_TYPE</span>
-<span class="k">unsafe</span>  <span class="c1">// KW_UNSAFE</span>
-<span class="k">use</span>     <span class="c1">// KW_USE</span>
-<span class="k">where</span>   <span class="c1">// KW_WHERE</span>
-<span class="k">while</span>   <span class="c1">// KW_WHILE</span>
-</code></pre></div><h3 id='contextual-keyword'>Contextual Keyword</h3>
+<span class="c1">// Each keyword is separated by comma (,)</span>
+<span class="k">as</span> <span class="p">,</span> <span class="k">async</span> <span class="p">,</span> <span class="k">await</span> <span class="p">,</span> <span class="k">break</span> <span class="p">,</span> <span class="k">const</span> <span class="p">,</span> <span class="k">continue</span> <span class="p">,</span> <span class="k">crate</span> <span class="p">,</span> <span class="k">dyn</span> <span class="p">,</span> <span class="k">else</span> <span class="p">,</span> <span class="k">enum</span> <span class="p">,</span> 
+<span class="k">extern</span> <span class="p">,</span> <span class="k">false</span> <span class="p">,</span> <span class="k">fn</span> <span class="p">,</span> <span class="k">for</span> <span class="p">,</span> <span class="k">if</span> <span class="p">,</span> <span class="k">impl</span> <span class="p">,</span> <span class="k">in</span> <span class="p">,</span> <span class="k">let</span> <span class="p">,</span> <span class="k">loop</span> <span class="p">,</span> <span class="k">match</span> <span class="p">,</span> <span class="k">mod</span> <span class="p">,</span> 
+<span class="k">move</span> <span class="p">,</span> <span class="k">mut</span> <span class="p">,</span> <span class="k">pub</span> <span class="p">,</span> <span class="k">ref</span> <span class="p">,</span> <span class="k">return</span> <span class="p">,</span> <span class="k">self</span> <span class="p">,</span> <span class="k">Self</span> <span class="p">,</span> <span class="k">static</span> <span class="p">,</span> <span class="k">struct</span> <span class="p">,</span> 
+<span class="k">super</span> <span class="p">,</span> <span class="k">trait</span> <span class="p">,</span> <span class="k">true</span> <span class="p">,</span> <span class="k">type</span> <span class="p">,</span> <span class="k">unsafe</span> <span class="p">,</span> <span class="k">use</span> <span class="p">,</span> <span class="k">where</span> <span class="p">,</span> <span class="k">while</span>
+</code></pre></div>
+<p>When lexing, these words can never be treated as an identifier directly.</p>
+<h3 id='contextual-keyword'>Contextual Keyword</h3>
 <p>These are any keywords that are sometimes keywords when in a specific context.</p>
 <div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// From https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/#contextual-keywords</span>
-<span class="k">add</span>
-<span class="n">and</span>
-<span class="k">alias</span>
-<span class="k">ascending</span>
-<span class="n">args</span>
-<span class="k">async</span>
-<span class="k">await</span>
-<span class="k">by</span>
-<span class="k">descending</span>
-<span class="kt">dynamic</span>
-<span class="k">equals</span>
-<span class="n">file</span>
-<span class="k">from</span>
-<span class="k">get</span>
-<span class="k">global</span>
-<span class="k">group</span>
-<span class="n">init</span>
-<span class="k">into</span>
-<span class="k">join</span>
-<span class="k">let</span>
-<span class="n">managed</span> <span class="c1">// (function pointer calling convention)</span>
-<span class="k">nameof</span>
-<span class="n">nint</span>
-<span class="n">not</span>
-<span class="n">notnull</span>
-<span class="n">nuint</span>
-<span class="k">on</span>
-<span class="n">or</span>
-<span class="k">orderby</span>
-<span class="k">partial</span> <span class="c1">// type and method</span>
-<span class="n">record</span>
-<span class="k">remove</span>
-<span class="n">required</span>
-<span class="n">scoped</span>
-<span class="k">select</span>
-<span class="k">set</span>
-<span class="n">unmanaged</span> <span class="c1">// function pointer calling convention and generic type constraint</span>
-<span class="k">value</span>
-<span class="kt">var</span>
-<span class="n">when</span> <span class="c1">// (filter condition)</span>
-<span class="k">where</span> <span class="c1">// generic type constraint and query clause</span>
-<span class="n">with</span>
-<span class="k">yield</span>
+<span class="c1">// Each keyword is separated by comma (,)</span>
+<span class="k">add</span> <span class="p">,</span> <span class="n">and</span> <span class="p">,</span> <span class="k">alias</span> <span class="p">,</span> <span class="k">ascending</span> <span class="p">,</span> <span class="n">args</span> <span class="p">,</span> <span class="k">async</span> <span class="p">,</span> <span class="k">await</span> <span class="p">,</span> <span class="k">by</span> <span class="p">,</span> <span class="k">descending</span> <span class="p">,</span> <span class="kt">dynamic</span> <span class="p">,</span> <span class="k">equals</span> <span class="p">,</span> <span class="n">file</span> <span class="p">,</span> <span class="k">from</span> <span class="p">,</span> 
+<span class="k">get</span> <span class="p">,</span> <span class="k">global</span> <span class="p">,</span> <span class="k">group</span> <span class="p">,</span> <span class="n">init</span> <span class="p">,</span> <span class="k">into</span> <span class="p">,</span> <span class="k">join</span> <span class="p">,</span> <span class="k">let</span> <span class="p">,</span> <span class="n">managed</span> <span class="p">,</span> <span class="k">nameof</span> <span class="p">,</span> <span class="n">nint</span> <span class="p">,</span> <span class="n">not</span> <span class="p">,</span> <span class="n">notnull</span> <span class="p">,</span> <span class="n">nuint</span> <span class="p">,</span> <span class="k">on</span> <span class="p">,</span> 
+<span class="n">or</span> <span class="p">,</span> <span class="k">orderby</span> <span class="p">,</span> <span class="k">partial</span> <span class="p">,</span> <span class="n">record</span> <span class="p">,</span> <span class="k">remove</span> <span class="p">,</span> <span class="n">required</span> <span class="p">,</span> <span class="n">scoped</span> <span class="p">,</span> <span class="k">select</span> <span class="p">,</span> <span class="k">set</span> <span class="p">,</span> <span class="n">unmanaged</span> <span class="p">,</span> <span class="k">value</span> <span class="p">,</span> <span class="kt">var</span> <span class="p">,</span> 
+<span class="n">when</span> <span class="p">,</span> <span class="k">where</span> <span class="p">,</span> <span class="n">with</span> <span class="p">,</span> <span class="k">yield</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># From https://docs.python.org/3/reference/lexical_analysis.html#soft-keywords
 # This is since version 3.10
-</span><span class="n">_</span>
-<span class="n">case</span>
-<span class="n">match</span>
-</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">dyn</span>     <span class="c1">// KW_DYN - 2015 edition</span>
-<span class="k">union</span>   <span class="c1">// KW_UNION</span>
-<span class="k">'static</span> <span class="c1">// KW_STATICLIFETIME</span>
-</code></pre></div><h2 id='operator-token'>Operator Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code></code></pre></div><h2 id='identifier-token'>Identifier Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code></code></pre></div><h2 id='reserved-token'>Reserved Token</h2><h1 id='type'>Type</h1><h2 id='atomic-types'>Atomic Types</h2><h2 id='composite-type'>Composite Type</h2><h1 id='expression'>Expression</h1><h1 id='statement'>Statement</h1><h1 id='variable'>Variable</h1><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="kt">bool</span> <span class="n">a</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+# Each keyword is separated by comma (,)
+</span><span class="n">_</span> <span class="p">,</span> <span class="n">case</span> <span class="p">,</span> <span class="n">match</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Each keyword is separated by comma (,)</span>
+<span class="k">dyn</span> <span class="p">,</span> <span class="k">union</span> <span class="p">,</span> <span class="k">'static</span>
+</code></pre></div><h2 id='operator-token'>Operator Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code></code></pre></div><h2 id='identifier-token'>Identifier Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code></code></pre></div><h2 id='reserved-token'>Reserved Token</h2><h1 id='type'>Type</h1><h2 id='atomic-types'>Atomic Types</h2><h2 id='composite-type'>Composite Type</h2><h1 id='expression'>Expression</h1><h1 id='statement'>Statement</h1><h1 id='binding'>Binding</h1>
+<p>A binding takes identifiers and relate that to a value. </p>
+<h2 id='variable'>Variable</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="kt">bool</span> <span class="n">a</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">a</span> <span class="o">=</span> <span class="bp">True</span>
-</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">let</span> <span class="n">a</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
-</code></pre></div><h1 id='callable-unit'>Callable Unit</h1>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Immutable variable</span>
+<span class="k">let</span> <span class="n">a</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+
+<span class="c1">// Mutable variable</span>
+<span class="k">let</span> <span class="k">mut</span> <span class="n">a</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div><h2 id='constant'>Constant</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">const</span> <span class="kt">bool</span> <span class="n">A_CONST</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># Python has no enforceable constant
+# By conventions, identifiers in SCREAMING_SNAKE_CASE usually signify constants 
+</span><span class="n">A_CONST</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">const</span> <span class="n">A_CONST</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre></div><h2 id='callable-unit'>Callable Unit</h2>
 <p>Also known functions, procedures, subroutines.</p>
 <h1 id='control-flow'>Control Flow</h1>
 <p>Control flow code determines how code flows in the program. According to the structured program theorem, there are only three constructs needed to build any Turing-equivalent machine: sequence, selection, and repetition. </p>
