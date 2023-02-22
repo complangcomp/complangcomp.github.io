@@ -1,6 +1,10 @@
 # Programming Language Comparison
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com) 
+
+
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://makeapullrequest.com) 
 [![GitHub](https://img.shields.io/github/license/comp-lang-comp/comp-lang-comp.github.io?style=for-the-badge)](./LICENSE.md)
+
+
 A website comparing programming languages in similar contexts. Our goal is to have a website that provides details for how different variety of code snippets implement the same behavior.
 
 ## Contribution
