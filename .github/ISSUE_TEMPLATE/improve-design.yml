@@ -1,0 +1,22 @@
+name: Improve Design
+description: Update Design of the project
+title: "[Improve Design]: : <REPLACE WITH TITLE>"
+labels: [Design, enhancement]
+assignees: []
+body: 
+- type: input
+  id: title
+  attributes:
+    label: "Title"
+    description: "What is the title of your design contribution?"
+    placeholder: "Title"
+  validations:
+    required: true
+- type: textarea
+  id: details
+  attributes:
+    label: "Explanations and Details"
+    description: "What is your plan for this contribution?"
+    placeholder: "What part of design to improve?"
+  validations:
+    required: true
