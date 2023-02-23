@@ -1,0 +1,23 @@
+name: Improve Content
+description: Add or update content of the project
+title: '[Improve Content]: <REPLACE WITH TITLE>'
+labels: [Content, enhancement]
+assignees: []
+body: 
+- type: input
+  id: title
+  attributes:
+    label: "Title"
+    description: "What is the title of your content contribution?"
+    placeholder: "Title"
+  validations:
+    required: true
+- type: textarea
+  id: details
+  attributes:
+    label: "Explanations and Details"
+    description: "What is your plan for this contribution?"
+    placeholder: "What you you plan on adding/removing/editing? If possible, you can also list any files you plan on changes as well to help others know which files to watch out for."
+  validations:
+    required: true
+- 
