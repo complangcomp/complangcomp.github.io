@@ -1,0 +1,58 @@
+name: Test
+description: Testing Issues Temple - MUST DELETE 
+title: '[TEST]: <REPLACE WITH TITLE>'
+labels: [enhancement, bug, test]
+assignees: ''
+body: 
+- type: markdown
+  value: |
+    # This is a H1 heading
+    Now we have a paragraph
+- type: input
+  id: title
+  attribute:
+    label: "Title"
+    description: "What is the title of your contribution?"
+    placeholder: "Title"
+  validations:
+    required: true
+- type: textarea
+  id: explain
+  attribute:
+    label: "Explanation"
+    description: "Provide an explaination?"
+    placeholder: "What are you going to do?"
+  validations:
+    required: true
+- type: dropdown
+  attribute:
+    label: "Dropdown single-select"
+    description: "Select One"
+    multiple: false
+    options:
+      - "1"
+      - "2"
+      - "3"
+  validations:
+    required: false
+- type: dropdown
+  attribute:
+    label: "Dropdown multi-select"
+    description: "Select Multiple"
+    multiple: true
+    options:
+      - A
+      - B
+      - C
+  validations:
+    required: false
+- type: checkboxes
+  attribute:
+    label: "Checkbox select"
+    description: "Select Multiple"
+    multiple: true
+    options:
+      - label: "Check 1 Required"
+        required: true
+      - label: 'Check 2 Optional'
+        required: false
