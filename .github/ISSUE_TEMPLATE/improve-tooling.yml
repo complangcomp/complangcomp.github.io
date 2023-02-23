@@ -1,5 +1,5 @@
 name: "Improve Tooling"
-about: "Add or update tools around the project"
+description: "Add or update tools around the project"
 title: "[New Tool]: : <REPLACE WITH TITLE>"
 labels: [enhancement, Tooling]
 assignees: []
