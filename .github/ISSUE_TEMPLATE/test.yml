@@ -5,12 +5,13 @@ labels: [enhancement, bug, test]
 assignees: ''
 body: 
 - type: markdown
-  value: |
-    # This is a H1 heading
-    Now we have a paragraph
+  attributes:
+    value: |
+      # This is a H1 heading
+      Now we have a paragraph
 - type: input
   id: title
-  attribute:
+  attributes:
     label: "Title"
     description: "What is the title of your contribution?"
     placeholder: "Title"
@@ -18,14 +19,14 @@ body:
     required: true
 - type: textarea
   id: explain
-  attribute:
+  attributes:
     label: "Explanation"
     description: "Provide an explaination?"
     placeholder: "What are you going to do?"
   validations:
     required: true
 - type: dropdown
-  attribute:
+  attributes:
     label: "Dropdown single-select"
     description: "Select One"
     multiple: false
@@ -36,7 +37,7 @@ body:
   validations:
     required: false
 - type: dropdown
-  attribute:
+  attributes:
     label: "Dropdown multi-select"
     description: "Select Multiple"
     multiple: true
@@ -47,7 +48,7 @@ body:
   validations:
     required: false
 - type: checkboxes
-  attribute:
+  attributes:
     label: "Checkbox select"
     description: "Select Multiple"
     multiple: true
