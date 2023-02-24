@@ -1,0 +1,23 @@
+name: "Improve Tooling"
+description: "Add or update tools around the project"
+title: "[New Tool]: : <REPLACE WITH TITLE>"
+labels: [enhancement, Tooling]
+assignees: []
+body: 
+- type: input
+  id: title
+  attributes:
+    label: "Title"
+    description: "What is the title of your tooling contribution?"
+    placeholder: "Title"
+  validations:
+    required: true
+- type: textarea
+  id: details
+  attributes:
+    label: "Explanations and Details"
+    description: "What is your plan for this contribution?"
+    placeholder: "What tool do you plan on making? Also include what language the tool will be written in."
+  validations:
+    required: true
+

@@ -1,0 +1,30 @@
+name: Improve Translation
+description: Add or improve translation of content
+title: '[Improve Translation]: : <REPLACE WITH TITLE>'
+labels: enhancement, Translation
+assignees: []
+body: 
+- type: input
+  id: title
+  attributes:
+    label: "Title"
+    description: "What is the title of your translation contribution?"
+    placeholder: "Title"
+  validations:
+    required: true
+- type: input
+  id: language
+  attributes:
+    label: "Language"
+    description: "What is the language of translation?"
+    placeholder: "Language"
+  validations:
+    required: true
+- type: textarea
+  id: details
+  attributes:
+    label: "Explanations and Details"
+    description: "What is your plan for this contribution?"
+    placeholder: "What content do you plan on translating?"
+  validations:
+    required: true
