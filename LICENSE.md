@@ -1,3 +1,0 @@
-Any files that are part of the content of the website are licensed under the [Creative Commons Attribution Share Alike 4.0 International (CC-BY-SA-4.0)](https://creativecommons.org/licenses/by-sa/4.0/). Namely, all file under the [source](./source) and [locales](./locales) folders are under the CC-BY-SA-4.0 License. 
-
-Any code files are licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0). Namely: [config.rb](./config.rb), [Dockerfile](./Dockerfile), [dockerslate.sh](./dockerslate.sh), [font-selection.json](./font-selection.json), [Gemfile](./Gemfile), [slate.sh](./slate.sh), [Vagrantfile](./Vagrantfile), and all files under the [lib](./lib) folders. 
