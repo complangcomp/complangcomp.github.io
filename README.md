@@ -19,4 +19,8 @@ For most up-to-date contributors: <https://github.com/comp-lang-comp/comp-lang-c
 ## License
 There are two licenses used in this project: [Creative Commons Attribution Share Alike 4.0 International (CC-BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) and [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0). At a high level, the CC-BY-SA-4.0 license applies to the content of the website while the Apache 2.0 License applies to the code.
 
-For more information, check out the project [LICENSE](./LICENSE.md). The text of the licenses can be found in: [LICENSE.Apache-2.0 for the Apache 2.0 License](./LICENSE.Apache-2.0) and [LICENSE.CC-BY-SA-4.0 for the CC-BY-SA 4.0 License](./LICENSE.CC-BY-SA-4.0) 
+Any files that are part of the content of the website are licensed under the [Creative Commons Attribution Share Alike 4.0 International (CC-BY-SA-4.0)](https://creativecommons.org/licenses/by-sa/4.0/). Namely, all file under the [source](./source) and [locales](./locales) folders are under the CC-BY-SA-4.0 License. 
+
+Any code files are licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0). Namely, the files: [config.rb](./config.rb), [Dockerfile](./Dockerfile), [dockerslate.sh](./dockerslate.sh), [font-selection.json](./font-selection.json), [Gemfile](./Gemfile), [slate.sh](./slate.sh), [Vagrantfile](./Vagrantfile), and all files under the [lib](./lib) folders. 
+
+The text of the licenses can be found in: [LICENSE.Apache-2.0 for the Apache 2.0 License](./LICENSE.Apache-2.0) and [LICENSE.CC-BY-SA-4.0 for the CC-BY-SA 4.0 License](./LICENSE.CC-BY-SA-4.0).
