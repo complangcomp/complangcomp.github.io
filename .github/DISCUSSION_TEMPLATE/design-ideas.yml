@@ -1,0 +1,36 @@
+title: "[Design Idea] "
+labels: [Design, enhancement]
+body:
+- type: input
+  id: name
+  attributes:
+    label: Idea Name
+    description: What is your idea?
+    placeholder: Place idea name here...
+  validations:
+    required: true
+- type: textarea
+  id: details
+  attributes:
+    label: Explanation
+    description: Provide an explanation of your idea.
+    placeholder: Describe your idea...
+  validations:
+    required: true
+- type: textarea
+  id: extra
+  attributes:
+    label: Other information
+    description: Provide any other information
+    placeholder: Alternative, Examples, Other Issues/Discussions to reference
+- type: checkboxes
+  attributes:
+    label: Code of Conduct
+    description: The Code of Conduct helps create a safe space for everyone. We require
+    that everyone agrees to it.
+    options:
+    - label: I agree to follow this project's [Code of Conduct](https://github.com/comp-lang-comp/comp-lang-comp.github.io/blob/main/CODE_OF_CONDUCT.md)
+      required: true
+
+
+    
