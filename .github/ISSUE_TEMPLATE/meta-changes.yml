@@ -23,8 +23,8 @@ body:
 - type: dropdown
   id: area
   attributes:
-    label: 
-    description: 
+    label: "Area of Project"
+    description: "What area of the project are you planning on working on?"
     multiple: true
     options: 
       - "Issue Template"
@@ -35,3 +35,4 @@ body:
       - "Wiki"
       - "CI/CD"
       - "Security"
+      - "Other - Leave Additional Comment"
