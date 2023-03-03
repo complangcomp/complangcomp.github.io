@@ -1,6 +1,6 @@
 name: Meta Change 
 description: Change project issues, discussion, or similar
-title: '[Improve Project]: : <REPLACE WITH TITLE>'
+title: '[Improve Project]: <REPLACE WITH TITLE>'
 labels: enhancement, Meta
 assignees: []
 body: 
@@ -16,7 +16,7 @@ body:
   id: details
   attributes:
     label: "Explanations and Details"
-    description: "What is your plan for this contribution?"
+    description: "Current plan for this contribution"
     placeholder: "What are your plans for improving the project? Please make sure that this contribution would not be better served with any other issue template."
   validations:
     required: true
@@ -24,9 +24,12 @@ body:
   id: area
   attributes:
     label: "Area of Project"
-    description: "What area of the project are you planning on working on?"
+    description: "What area(s) of the project are you planning on working on?"
     multiple: true
     options: 
+      - "CONTRIBUTING file"
+      - "README file"
+      - "Slate Changes"
       - "Issue Template"
       - "Discussion Template"
       - "Pull Request Template"
