@@ -28,7 +28,7 @@ body:
     options:
       - label: I have verified that there are no **similar** issues already being worked on and can contribute to.
         required: true
-      - label: I have read the [appropriate contribution guide](./CONTRIBUTING.md) before opening this issue.
+      - label: I have read the [appropriate contribution guide](../../CONTRIBUTING.md) before opening this issue.
         required: true
       - label: I have read Code Of Conduct and will abide by it for this contribution.
         required: true
