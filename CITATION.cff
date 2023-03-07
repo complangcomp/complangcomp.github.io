@@ -1,0 +1,23 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Comp-Lang-Comp
+message: >-
+  If you would like to cite this project, please use the
+  metadata from this file.
+type: software
+authors:
+  - name: The Comp-Lang-Comp Project Team
+    website: https://github.com/orgs/comp-lang-comp/people
+repository-code: 'https://github.com/comp-lang-comp/comp-lang-comp.github.io'
+url: 'https://comp-lang-comp.github.io/'
+abstract: >-
+  A website comparing programming languages in similar
+  contexts.
+keywords:
+  - Computer Languages
+  - Syntax
+license:
+  - Apache-2.0
+  - CC-BY-SA-4.0
