@@ -1,6 +1,6 @@
 ## Block Comments
 
-Block comments are comments that run from a certain start symbol to an end symbol. This means that comments can cover a small span of text (such as a single word within the same line) or large span of text (such as a comment that spans multiple lines).
+Block comments are comments that run from a certain start symbol to an end symbol. This means that comments can cover a small span of text (such as a single word within the same line) or a large span of text (such as a comment that spans multiple lines).
 
 > Block Comments (or equivalent) between language
 
@@ -11,6 +11,8 @@ Block comments are comments that run from a certain start symbol to an end symbo
     a
     block
     comment
+
+    Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/comments
 */
 ```
 
@@ -22,6 +24,10 @@ Block comments are comments that run from a certain start symbol to an end symbo
     multi-line
     string
     (Not a true block comment but equivalent)
+    Can use either triple single quote (') or triple double quote (")
+    
+    Source [1]: https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals
+        -> see "longstring" definition
 """
 ```
 
@@ -32,27 +38,29 @@ Block comments are comments that run from a certain start symbol to an end symbo
     a
     block
     comment
+
+    Source [1]: https://doc.rust-lang.org/reference/comments.html#non-doc-comments
 */
 ```
 
-Block comments can also be nested sometimes.
+>  All block comments produce no output 
+Block comments can also be nested.
 
 
-| Has Block Comments?  | Languages |
-| --------------------- | ----------- |
-| Yes, Directly        | C#, Rust  |
-| Sort of, Indirectly  | Python    |
-| No                   |           |
+| Has Block Comments? | Languages                                                                                                                                                            |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Yes, Directly       | [C#](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/comments), [Rust](https://doc.rust-lang.org/reference/comments.html#non-doc-comments) |
+| Sort of, Indirectly | Python                                                                                                                                                               |
+| No                  |                                                                                                                                                                      |
 
 
 | Start Block Comment Symbol | Start Block Comment Symbol | Languages |
-| ---------------------------- | ---------------------------- | ----------- |
+|----------------------------|----------------------------|-----------|
 | /*                         | */                         | C#, Rust  |
-|                            |                            |           |
 
 
+For languages don't directly have block comments, these are conventional alternative:
 
-| Block Comment Alternative | Languages |
-| --------------------------- | ----------- |
-| Multi-Line Strings        | Python    |
-|                           |           |
+| Block Comment Alternative | Languages                                                                                     |
+|---------------------------|-----------------------------------------------------------------------------------------------|
+| Multi-Line Strings        | [Python](https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals) |
