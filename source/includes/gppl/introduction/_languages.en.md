@@ -1,4 +1,5 @@
 ## Languages
+This page will have 3 languages you may switch between and compare.
 
 > Introduction to each of the supported languages.
 > Also includes a numbered list of sources referenced.
@@ -29,4 +30,4 @@ The current version for each of the languages are defined in the table.
 | Python        | ???     | 3.7   |
 | Rust          | ???     | 1.64.0|
 
-Version should try to generally work with new version.
+All code here should work with any version between the earliest and latest working versions.
