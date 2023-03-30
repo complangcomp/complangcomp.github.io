@@ -1,7 +1,5 @@
 ## Documentation Comments
 
-Comments that document your code outside of the source code and are generally used to generate documentation. Not all languages have this facility built into their compiler or interpreter.
-
 > Documentation comment examples
 
 ```csharp
@@ -42,6 +40,8 @@ Comments that document your code outside of the source code and are generally us
 // Source [1]: https://doc.rust-lang.org/reference/comments.html#doc-comments
 // Source [2]: https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html
 ```
+
+Comments that document your code outside of the source code and are generally used to generate documentation. Not all languages have this facility built into their compiler or interpreter.
 
 
 | Has Documentation Comments | Languages        |

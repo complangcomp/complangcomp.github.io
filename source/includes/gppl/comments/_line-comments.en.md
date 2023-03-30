@@ -1,7 +1,5 @@
 ## Line Comments
 
-Line comments are comments that run from the start of some symbol to the end of the line. Anything placed between will be ignored or removed when running the program. Once the line terminates, the comment also terminates, allowing the program to resume processing code after.
-
 > Line Comments between language
 
 ```csharp
@@ -21,6 +19,7 @@ Line comments are comments that run from the start of some symbol to the end of 
 
 >  All line comments produce no output 
 
+Line comments are comments that run from the start of some symbol to the end of the line. Anything placed between will be ignored or removed when running the program. Once the line terminates, the comment also terminates, allowing the program to resume processing code after.
 
 | Start Symbol | Languages                                                                                                                                                            |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|

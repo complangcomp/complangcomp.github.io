@@ -1,7 +1,5 @@
 ## Block Comments
 
-Block comments are comments that run from a certain start symbol to an end symbol. This means that comments can cover a small span of text (such as a single word within the same line) or a large span of text (such as a comment that spans multiple lines).
-
 > Block Comments (or equivalent) between language
 
 ```csharp
@@ -44,7 +42,8 @@ Block comments are comments that run from a certain start symbol to an end symbo
 ```
 
 >  All block comments produce no output 
-Block comments can also be nested.
+
+Block comments are comments that run from a certain start symbol to an end symbol. This means that comments can cover a small span of text (such as a single word within the same line) or a large span of text (such as a comment that spans multiple lines). Block comments can also be nested within themselves.
 
 
 | Has Block Comments? | Languages                                                                                                                                                            |
