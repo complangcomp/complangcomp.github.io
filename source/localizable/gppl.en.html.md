@@ -19,9 +19,9 @@ includes:
   - gppl/comments/documentation-comments
   - gppl/token
   - gppl/token/literal
-  # - gppl/token/literal/boolean-literal
-  # - gppl/token/literal/numeric-literal
-  # - gppl/token/literal/textual-literal
+  - gppl/token/literal/boolean
+  - gppl/token/literal/numeric
+  - gppl/token/literal/textual
   - gppl/token/keyword
   - gppl/token/keyword/strict
   - gppl/token/keyword/contextual
