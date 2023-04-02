@@ -25,12 +25,12 @@ includes:
   - gppl/token/keyword
   - gppl/token/keyword/strict
   - gppl/token/keyword/contextual
-  - gppl/token/operators
+  # - gppl/token/operators
   - gppl/token/identifier
-  - gppl/token/reserved
+  # - gppl/token/reserved
   # - gppl/token/punctuation
-  - gppl/type
-  - gppl/type/atomic
+  # - gppl/type
+  # - gppl/type/atomic
   # - gppl/type/atomic/bool
   # - gppl/type/atomic/bytes
   # - gppl/type/atomic/number
@@ -41,7 +41,7 @@ includes:
   # - gppl/type/atomic/number/complex
   # - gppl/type/atomic/text
   # - gppl/type/atomic/text/character
-  - gppl/type/composite
+  # - gppl/type/composite
   # - gppl/type/composite/text
   # - gppl/type/composite/text/string
   # - gppl/type/composite/homogeneous
@@ -49,8 +49,8 @@ includes:
   # - gppl/type/composite/heterogeneous
   # - gppl/type/composite/heterogeneous/tuple
   # - gppl/type/composite/heterogeneous/struct
-  - gppl/expression
-  - gppl/statement
+  # - gppl/expression
+  # - gppl/statement
   - gppl/binding
   - gppl/binding/variable
   - gppl/binding/constant
@@ -59,14 +59,15 @@ includes:
   - gppl/control-flow/sequence
   - gppl/control-flow/selection
   - gppl/control-flow/selection/single_branch
-  - gppl/control-flow/selection/branch_with_alternative
+  - gppl/control-flow/selection/branch_with_default
+  - gppl/control-flow/selection/multiple_branches
   - gppl/control-flow/repetition
   - gppl/control-flow/repetition/condition
   - gppl/control-flow/repetition/condition/while
   - gppl/control-flow/repetition/infinite
   - gppl/control-flow/repetition/iteration
   - gppl/control-flow/repetition/iteration/count_controlled
-  - gppl/control-flow/repetition/recursion
+  # - gppl/control-flow/repetition/recursion
 
 search: true
 
