@@ -29,8 +29,8 @@ includes:
   - gppl/token/identifier
   # - gppl/token/reserved
   # - gppl/token/punctuation
-  # - gppl/type
-  # - gppl/type/atomic
+  - gppl/type
+  - gppl/type/atomic
   # - gppl/type/atomic/bool
   # - gppl/type/atomic/bytes
   # - gppl/type/atomic/number
@@ -41,7 +41,7 @@ includes:
   # - gppl/type/atomic/number/complex
   # - gppl/type/atomic/text
   # - gppl/type/atomic/text/character
-  # - gppl/type/composite
+  - gppl/type/composite
   # - gppl/type/composite/text
   # - gppl/type/composite/text/string
   # - gppl/type/composite/homogeneous
