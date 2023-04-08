@@ -49,8 +49,8 @@ includes:
   # - gppl/type/composite/heterogeneous
   # - gppl/type/composite/heterogeneous/tuple
   # - gppl/type/composite/heterogeneous/struct
-  # - gppl/expression
-  # - gppl/statement
+  - gppl/expression
+  - gppl/statement
   - gppl/binding
   - gppl/binding/variable
   - gppl/binding/constant
