@@ -1,2 +1,2 @@
 # Binding
-A binding takes identifiers and relate that to a value. 
+A binding takes identifiers and relate that to an expression or value. 
