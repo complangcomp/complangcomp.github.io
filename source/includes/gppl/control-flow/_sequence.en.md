@@ -53,4 +53,4 @@ Multiple sequences can be pulled together into a block.
 | Sequence Open Block | Sequence Close Block | Languages |
 |---------------------|----------------------|-----------|
 | `{`                 | `}`                  | C#, Rust  |
-| Indent              | Deindent             | Python    |
+| Indent              | Dedent               | Python    |
