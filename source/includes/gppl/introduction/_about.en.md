@@ -1,2 +1,2 @@
 ## About
-This page provides a comparison between many general purpose programming languages. 
+This page provides a comparison between many general purpose programming languages. General purpose here meaning any coding languages that can be used in a variety of use cases (although they need not necessarily be the best for all use cases). These languages should at minimum be Turing Complete. These languages can range from dynamic to static type checking, be compiled or interpreted, and have many different syntactic sugar. The goal is to show how each language approaches common semantic programming constructs such as bindings, conditionals, and loops. This will only focus on the language by itself and not any libraries (including any standard libraries) that it may use.

@@ -3,7 +3,8 @@
 Also known as iteration or looping.
 
 
-| Langage | Conditional Loop | Infinite Loop | Count Loop | Collection Loop | Other Loops | General Loops | Recursion |
-| --------- | ------------------ | --------------- | ------------ | ----------------- | ------------- | --------------- | ----------- |
-|         |                  |               |            |                 |             |               |           |
-|         |                  |               |            |                 |             |               |           |
+| Language | Conditional Loop | Infinite Loop | Count Loop | Collection Loop |
+|----------|------------------|---------------|------------|-----------------|
+| C#       | Yes              | Possible      | Yes        | Yes             |
+| Python   | Yes              | Possible      | Possibe    | Yes             |
+| Rust     | Yes              | Yes           | Yes        | Yes             |

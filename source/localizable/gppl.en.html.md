@@ -19,15 +19,15 @@ includes:
   - gppl/comments/documentation-comments
   - gppl/token
   - gppl/token/literal
-  # - gppl/token/literal/boolean-literal
-  # - gppl/token/literal/numeric-literal
-  # - gppl/token/literal/textual-literal
+  - gppl/token/literal/boolean
+  - gppl/token/literal/numeric
+  - gppl/token/literal/textual
   - gppl/token/keyword
   - gppl/token/keyword/strict
   - gppl/token/keyword/contextual
-  - gppl/token/operators
+  # - gppl/token/operators
   - gppl/token/identifier
-  - gppl/token/reserved
+  # - gppl/token/reserved
   # - gppl/token/punctuation
   - gppl/type
   - gppl/type/atomic
@@ -59,14 +59,15 @@ includes:
   - gppl/control-flow/sequence
   - gppl/control-flow/selection
   - gppl/control-flow/selection/single_branch
-  - gppl/control-flow/selection/branch_with_alternative
+  - gppl/control-flow/selection/branch_with_default
+  - gppl/control-flow/selection/multiple_branches
   - gppl/control-flow/repetition
   - gppl/control-flow/repetition/condition
   - gppl/control-flow/repetition/condition/while
   - gppl/control-flow/repetition/infinite
   - gppl/control-flow/repetition/iteration
   - gppl/control-flow/repetition/iteration/count_controlled
-  - gppl/control-flow/repetition/recursion
+  # - gppl/control-flow/repetition/recursion
 
 search: true
 
