@@ -350,13 +350,7 @@
                     <a href="#keyword-token" class="toc-h2 toc-link" data-title="Keyword Token">Keyword Token</a>
                   </li>
                   <li>
-                    <a href="#operator-token" class="toc-h2 toc-link" data-title="Operator Token">Operator Token</a>
-                  </li>
-                  <li>
                     <a href="#identifier-token" class="toc-h2 toc-link" data-title="Identifier Token">Identifier Token</a>
-                  </li>
-                  <li>
-                    <a href="#reserved-token" class="toc-h2 toc-link" data-title="Reserved Token">Reserved Token</a>
                   </li>
               </ul>
           </li>
@@ -424,8 +418,10 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Comparing General Programming Language</p>
 <h2 id='about'>About</h2>
-<p>This page provides a comparison between many general purpose programming languages. </p>
+<p>This page provides a comparison between many general purpose programming languages. General purpose here meaning any coding languages that can be used in a variety of use cases (although they need not necessarily be the best for all use cases). These languages should at minimum be Turing Complete. These languages can range from dynamic to static type checking, be compiled or interpreted, and have many different syntactic sugar. The goal is to show how each language approaches common semantic programming constructs such as bindings, conditionals, and loops. This will only focus on the language by itself and not any libraries (including any standard libraries) that it may use.</p>
 <h2 id='languages'>Languages</h2>
+<p>This page will have 3 languages you may switch between and compare.</p>
+
 <blockquote>
 <p>Introduction to each of the supported languages.
 Also includes a numbered list of sources referenced.</p>
@@ -435,9 +431,11 @@ Also includes a numbered list of sources referenced.</p>
 <span class="c1">// </span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># Sources and information about the Python language
 # [1]: https://docs.python.org/3/reference/index.html
+# [2]: https://peps.python.org
 # 
 </span></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Sources and information about the Rust language</span>
 <span class="c1">// [1]: https://doc.rust-lang.org/reference/index.html</span>
+<span class="c1">// [2]: https://doc.rust-lang.org/rustdoc</span>
 <span class="c1">// </span>
 </code></pre></div>
 <p>The current version for each of the languages are defined in the table.</p>
@@ -466,19 +464,26 @@ Also includes a numbered list of sources referenced.</p>
 </tr>
 </tbody></table>
 
-<p>Version should try to generally work with new version.</p>
+<p>Unless otherwise noted as a comment in the code, all code snippets should work with any version between the earliest and latest working versions for the associated language.</p>
 <h1 id='comments'>Comments</h1>
 <p>These are pieces of code that are generally ignored by the compiler or interpreter. Comments help programmers with providing extra information about the code without executing it.</p>
 <h2 id='line-comments'>Line Comments</h2>
-<p>Line comments are comments that run from the start of some symbol to the end of the line.</p>
-
 <blockquote>
 <p>Line Comments between language</p>
 </blockquote>
 <div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// This is a single line comment</span>
+<span class="c1">// Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/comments</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># This is a single line comment
+# Source [1]: https://docs.python.org/3/reference/lexical_analysis.html#comments
 </span></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// This is a single line comment</span>
+<span class="c1">// Source [1]: https://doc.rust-lang.org/reference/comments.html#non-doc-comments</span>
 </code></pre></div>
+<blockquote>
+<p>All line comments produce no output </p>
+</blockquote>
+
+<p>Line comments are comments that run from the start of some symbol to the end of the line. Anything placed between will be ignored or removed when running the program. Once the line terminates, the comment also terminates, allowing the program to resume processing code after.</p>
+
 <table><thead>
 <tr>
 <th>Start Symbol</th>
@@ -487,16 +492,14 @@ Also includes a numbered list of sources referenced.</p>
 </thead><tbody>
 <tr>
 <td>//</td>
-<td>C#, Rust</td>
+<td><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/comments">C#</a>, <a href="https://doc.rust-lang.org/reference/comments.html#non-doc-comments">Rust</a></td>
 </tr>
 <tr>
 <td>#</td>
-<td>Python</td>
+<td><a href="https://docs.python.org/3/reference/lexical_analysis.html#comments">Python</a></td>
 </tr>
 </tbody></table>
 <h2 id='block-comments'>Block Comments</h2>
-<p>Block comments are comments that run from a certain start symbol to an end symbol. This means that comments can cover a small span of text (such as a single word within the same line) or large span of text (such as a comment that spans multiple lines).</p>
-
 <blockquote>
 <p>Block Comments (or equivalent) between language</p>
 </blockquote>
@@ -506,6 +509,8 @@ Also includes a numbered list of sources referenced.</p>
     a
     block
     comment
+
+    Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/comments
 */</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="s">"""
     This
@@ -514,6 +519,10 @@ Also includes a numbered list of sources referenced.</p>
     multi-line
     string
     (Not a true block comment but equivalent)
+    Can use either triple single quote (') or triple double quote (")
+
+    Source [1]: https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals
+        -&gt; see "longstring" definition
 """</span>
 </code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="cm">/*
     This
@@ -521,9 +530,15 @@ Also includes a numbered list of sources referenced.</p>
     a
     block
     comment
+
+    Source [1]: https://doc.rust-lang.org/reference/comments.html#non-doc-comments
 */</span>
 </code></pre></div>
-<p>Block comments can also be nested sometimes.</p>
+<blockquote>
+<p>All block comments produce no output </p>
+</blockquote>
+
+<p>Block comments are comments that run from a certain start symbol to an end symbol. This means that comments can cover a small span of text (such as a single word within the same line) or a large span of text (such as a comment that spans multiple lines). Block comments can also be nested within themselves.</p>
 
 <table><thead>
 <tr>
@@ -533,7 +548,7 @@ Also includes a numbered list of sources referenced.</p>
 </thead><tbody>
 <tr>
 <td>Yes, Directly</td>
-<td>C#, Rust</td>
+<td><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/comments">C#</a>, <a href="https://doc.rust-lang.org/reference/comments.html#non-doc-comments">Rust</a></td>
 </tr>
 <tr>
 <td>Sort of, Indirectly</td>
@@ -557,12 +572,9 @@ Also includes a numbered list of sources referenced.</p>
 <td>*/</td>
 <td>C#, Rust</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
+
+<p>For languages don&#39;t directly have block comments, these are conventional alternative:</p>
 
 <table><thead>
 <tr>
@@ -572,24 +584,46 @@ Also includes a numbered list of sources referenced.</p>
 </thead><tbody>
 <tr>
 <td>Multi-Line Strings</td>
-<td>Python</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
+<td><a href="https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals">Python</a></td>
 </tr>
 </tbody></table>
 <h2 id='documentation-comments'>Documentation Comments</h2>
-<p>Comments that document your code outside of the source code and are generally used to generate documentation. Not all languages have this facility built into their compiler or interpreter.</p>
-
 <blockquote>
 <p>Documentation comment examples</p>
 </blockquote>
-<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">/// &lt;summary&gt; This is a documentation comment that attaches to a function or class &lt;/summary&gt;</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="s">""" This is a documentation comment that goes under a function or class"""</span>
-</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="cd">//! This is an outer documentation comment</span>
-<span class="cd">/// This is an inner documentation comment</span>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">/// &lt;summary&gt; This is a single line documentation comment. &lt;/summary&gt;</span>
+<span class="cm">/** &lt;summary&gt;
+    This is a multiple
+    line documentation comment.
+    This can apply to any class and its members.
+    Uses XML markup for formatting.
+
+    Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/
+&lt;/summary&gt;
+*/</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="s">""" This is a documentation comment applied to class, function or module when it is the first expression inside. 
+    Source [1]: https://docs.python.org/3/glossary.html#term-docstring 
+    Source [2]: https://peps.python.org/pep-0257/
+
+    Uses ReStructureText markup for formatting 
+    Source [2]: https://peps.python.org/pep-0287/
+"""</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="cd">//! This is a outer line documentation comment</span>
+<span class="cd">/*! This is an outer block documentation comment.
+    Applies to the parent item of this comment.
+*/</span> 
+
+<span class="cd">/// This is an inner line documentation comment</span>
+<span class="cd">/** This is an inner block documentation comment.
+    Applies to the item after this comment.
+    Uses Markdown for formatting.
+*/</span>
+
+<span class="c1">// Source [1]: https://doc.rust-lang.org/reference/comments.html#doc-comments</span>
+<span class="c1">// Source [2]: https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html</span>
 </code></pre></div>
+<p>Comments that document your code outside of the source code and are generally used to generate documentation. Not all languages have this facility built into their compiler or interpreter.</p>
+
 <table><thead>
 <tr>
 <th>Has Documentation Comments</th>
@@ -613,16 +647,16 @@ Also includes a numbered list of sources referenced.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>Markdown</td>
-<td>Rust</td>
+<td><a href="https://commonmark.org/">CommonMark Markdown</a></td>
+<td><a href="https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html#markdown">Rust</a></td>
 </tr>
 <tr>
-<td>ReStructureTextPython</td>
-<td>Python</td>
+<td><a href="https://docutils.sourceforge.io/rst.html">ReStructureText</a></td>
+<td><a href="https://peps.python.org/pep-0287/">Python</a></td>
 </tr>
 <tr>
-<td>XML</td>
-<td>C#</td>
+<td><a href="https://www.w3.org/TR/REC-xml/">XML</a></td>
+<td><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/recommended-tags">C#</a></td>
 </tr>
 </tbody></table>
 <h1 id='token'>Token</h1>
@@ -631,6 +665,190 @@ Also includes a numbered list of sources referenced.</p>
 <p>Tokens are created during the lexing stage of the parser.</p>
 <h2 id='literal-tokens'>Literal Tokens</h2>
 <p>These tokens are seen as the exact value they represent and hold no other meaning besides themselves. </p>
+<h3 id='boolean-literal'>Boolean Literal</h3>
+<blockquote>
+<p>Example boolean literal values across languages</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool#literals</span>
+<span class="c1">// True and False Literals</span>
+<span class="k">true</span>
+<span class="k">false</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># Source [1]: 
+#   - https://docs.python.org/3/library/constants.html#False
+#   - https://docs.python.org/3/library/constants.html#True
+# True and False Literal - Constants in Python
+</span><span class="bp">True</span>
+<span class="bp">False</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Source [1]: https://doc.rust-lang.org/reference/expressions/literal-expr.html#boolean-literal-expressions</span>
+
+<span class="c1">// True and False Literal</span>
+<span class="k">true</span>
+<span class="k">false</span>
+</code></pre></div>
+<p>These are literal values which might eventually become boolean value inside a program. Generally, one represents the concept of &quot;true&quot; and the other the concept of &quot;false&quot;.</p>
+
+<table><thead>
+<tr>
+<th><strong>True</strong> Keyword</th>
+<th><strong>False</strong> Keyword</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool#literals">C#</a>, <a href="https://doc.rust-lang.org/reference/expressions/literal-expr.html#boolean-literal-expressions">Rust</a></td>
+</tr>
+<tr>
+<td><code>True</code></td>
+<td><code>False</code></td>
+<td><a href="https://docs.python.org/3/library/constants.html">Python</a></td>
+</tr>
+</tbody></table>
+<h3 id='numeric-literal'>Numeric Literal</h3>
+<blockquote>
+<p>Example numeric literal values across languages</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// Integral Literal</span>
+<span class="c1">// Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types#integer-literals </span>
+<span class="m">0</span>
+<span class="m">42</span>
+<span class="p">-</span><span class="m">1</span>
+<span class="m">100</span><span class="n">_000</span>
+<span class="c1">// Floating Point Literal</span>
+<span class="c1">// Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types</span>
+<span class="m">3.14</span>
+<span class="p">-</span><span class="m">2.71</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># Source [1]: https://docs.python.org/3/reference/lexical_analysis.html#numeric-literals
+# Python has 3 kinds of numeric literals: Integer, Floating Point, and Imaginary
+# Integer Literal
+# Source [1]: https://docs.python.org/3/reference/lexical_analysis.html#integer-literals
+</span><span class="mi">0</span>
+<span class="mi">42</span>
+<span class="o">-</span><span class="mi">1</span>
+<span class="mi">100_000</span>
+<span class="c1"># Floating Point Literal
+# Source [1]: https://docs.python.org/3/reference/lexical_analysis.html#floating-point-literals
+</span><span class="mf">3.14</span>
+<span class="o">-</span><span class="mf">2.71</span>
+<span class="c1"># Imaginary Literal
+# Source [1]: https://docs.python.org/3/reference/lexical_analysis.html#imaginary-literals
+</span><span class="mf">1j</span>
+<span class="mf">8.32j</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Source [1]: </span>
+<span class="c1">//      - https://doc.rust-lang.org/reference/tokens.html#numbers</span>
+<span class="c1">//      - https://doc.rust-lang.org/reference/tokens.html#number-literals</span>
+
+<span class="c1">// Integer Literal</span>
+<span class="c1">// Source [1]: https://doc.rust-lang.org/reference/tokens.html#integer-literals</span>
+<span class="mi">0</span>
+<span class="mi">42</span>
+<span class="o">-</span><span class="mi">1</span>
+<span class="mi">100_000</span>
+<span class="c1">// Floating Point Literal</span>
+<span class="c1">// Source [1]: https://doc.rust-lang.org/reference/tokens.html#floating-point-literals</span>
+<span class="mf">3.14</span>
+<span class="o">-</span><span class="mf">2.71</span>
+</code></pre></div>
+<p>These are any literal tokens which may eventually become a numeric value inside the program. These are used to represent any kind of number including integral numbers and real numbers, and can also be in represented in different bases from decimal, such as binary and hexadecimal. </p>
+
+<p>One kind of distinction a language can make is whether floating point numbers and integers are treated as separate kinds of literal values.</p>
+
+<table><thead>
+<tr>
+<th>Float-Integer Distinction</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Yes</td>
+<td>C#, Python, Rust</td>
+</tr>
+<tr>
+<td>No</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='literal-text'>Literal Text</h3>
+<blockquote>
+<p>Example textual literal values across languages</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// Character Literal</span>
+<span class="c1">// Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/lexical-structure#6455-character-literals</span>
+<span class="sc">'a'</span>
+<span class="c1">// String Literal</span>
+<span class="c1">// Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/lexical-structure#6456-string-literals</span>
+<span class="s">"Hello"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># String Literal
+# Source [1]: https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals
+# Python does not distinguish between characters and strings
+# Characters are just strings of length 1
+</span><span class="s">'a'</span>
+<span class="s">"Hello"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Character Literal</span>
+<span class="c1">// Source [1]: https://doc.rust-lang.org/reference/tokens.html#character-literals</span>
+<span class="sc">'a'</span>
+<span class="c1">// String Literal</span>
+<span class="c1">// Source [1]: https://doc.rust-lang.org/reference/tokens.html#string-literals</span>
+<span class="s">"Hello"</span>
+</code></pre></div>
+<p>These are literal values which might eventually become text value inside a program.</p>
+
+<table><thead>
+<tr>
+<th>Char-String Distinction</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Yes</td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td>No</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Char Start Symbol</th>
+<th>Char End Symbol</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>&#39;</code></td>
+<td><code>&#39;</code></td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td><code>&quot;</code> or <code>&#39;</code></td>
+<td><code>&quot;</code> or <code>&#39;</code></td>
+<td>Python</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>String Start Symbol</th>
+<th>String End Symbol</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>&quot;</code></td>
+<td><code>&quot;</code></td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td><code>&quot;</code> or <code>&#39;</code></td>
+<td><code>&quot;</code> or <code>&#39;</code></td>
+<td>Python</td>
+</tr>
+</tbody></table>
 <h2 id='keyword-token'>Keyword Token</h2>
 <p>Keywords are tokens that have specific meaning in the language.</p>
 
@@ -693,98 +911,660 @@ Also includes a numbered list of sources referenced.</p>
 </span><span class="n">_</span> <span class="p">,</span> <span class="n">case</span> <span class="p">,</span> <span class="n">match</span>
 </code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Each keyword is separated by comma (,)</span>
 <span class="k">dyn</span> <span class="p">,</span> <span class="k">union</span> <span class="p">,</span> <span class="k">'static</span>
-</code></pre></div><h2 id='operator-token'>Operator Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code></code></pre></div><h2 id='identifier-token'>Identifier Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code></code></pre></div><h2 id='reserved-token'>Reserved Token</h2><h1 id='type'>Type</h1><h2 id='atomic-types'>Atomic Types</h2><h2 id='composite-type'>Composite Type</h2><h1 id='expression'>Expression</h1><h1 id='statement'>Statement</h1><h1 id='binding'>Binding</h1>
-<p>A binding takes identifiers and relate that to a value. </p>
+</code></pre></div><h2 id='identifier-token'>Identifier Token</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code></code></pre></div><h1 id='type'>Type</h1>
+<p>A data type represents a set of all valid values that are possible and operations/functions one can apply to them. Data types act as an abstraction over and provide meaning to the underlying byte representation.</p>
+
+<!-- My need subcategories for built-in vs user defined -->
+
+<p>We can classify types into two categories: atomic and composite.</p>
+
+<table><thead>
+<tr>
+<th>Has Types</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Unityped</td>
+<td></td>
+</tr>
+<tr>
+<td>No</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Type Checking</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Compile Time (Static)</td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td>Runtime (Dynamic)</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Type Declaration</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Explicit</td>
+<td>C#</td>
+</tr>
+<tr>
+<td>Inferred</td>
+<td>Rust?</td>
+</tr>
+<tr>
+<td>Implicit</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+
+<p>In the next sections, we will only go over types that are directly available (that is, types that do not depend on other files nor user definition).</p>
+<h2 id='atomic-types'>Atomic Types</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types</span>
+<span class="c1">// List of data types separated by comma ( , )</span>
+<span class="kt">bool</span><span class="p">,</span> <span class="kt">byte</span><span class="p">,</span> <span class="kt">sbyte</span><span class="p">,</span> <span class="kt">char</span><span class="p">,</span> <span class="kt">decimal</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> 
+<span class="kt">int</span><span class="p">,</span> <span class="kt">uint</span><span class="p">,</span> <span class="n">nint</span><span class="p">,</span> <span class="n">nuint</span><span class="p">,</span> <span class="kt">long</span><span class="p">,</span> <span class="kt">ulong</span><span class="p">,</span> <span class="kt">short</span><span class="p">,</span> <span class="kt">ushort</span><span class="p">,</span>
+<span class="c1">// void - act as a type for function that returns nothing</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># Source [1]: https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy
+# List of data types separated by comma ( , )
+</span><span class="bp">None</span><span class="p">,</span> <span class="nb">NotImplemented</span><span class="p">,</span> <span class="bp">Ellipsis</span><span class="p">,</span> 
+<span class="c1"># Sub-classes of Number supertype
+</span><span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">complex</span> 
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Source [1]: https://doc.rust-lang.org/reference/types.html</span>
+<span class="c1">// List of data types separated by comma ( , )</span>
+<span class="nb">bool</span><span class="p">,</span>
+<span class="c1">// Numeric</span>
+<span class="nb">i8</span><span class="p">,</span> <span class="nb">u8</span><span class="p">,</span> <span class="nb">i16</span><span class="p">,</span> <span class="nb">u16</span><span class="p">,</span> <span class="nb">f32</span><span class="p">,</span> <span class="nb">i32</span><span class="p">,</span> <span class="nb">u32</span><span class="p">,</span>  <span class="nb">f64</span><span class="p">,</span> <span class="nb">i64</span><span class="p">,</span> <span class="nb">u64</span>
+<span class="c1">// Textual</span>
+<span class="nb">char</span>
+</code></pre></div>
+<p>These are all types that have values which do not hold other values. At a low level, all types are just some way of representing a pattern of byte(s). The idea of these types is that they provide the fundamental units for the type system. </p>
+<h2 id='composite-type'>Composite Type</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// Source [1]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types</span>
+<span class="c1">// List of data types separated by comma ( , )</span>
+<span class="kt">object</span><span class="p">,</span> <span class="kt">string</span><span class="p">,</span> <span class="kt">dynamic</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># Source [1]: https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy
+# List of data types separated by comma ( , )
+# Sequence types
+</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">,</span> <span class="nb">bytearray</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span>
+<span class="c1"># Set types
+</span><span class="nb">set</span><span class="p">,</span> <span class="nb">frozenset</span><span class="p">,</span>
+<span class="c1"># Mapping Types
+</span><span class="nb">dict</span><span class="p">,</span>
+<span class="c1"># Class and object
+</span><span class="n">class</span><span class="p">,</span> <span class="nb">object</span>
+<span class="c1"># Slice
+</span><span class="nb">slice</span><span class="p">,</span>
+<span class="c1"># Functions, Generators, Coroutines, and Async functions 
+</span></code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Source [1]: https://doc.rust-lang.org/reference/types.html</span>
+<span class="c1">// List of data types separated by comma ( , )</span>
+<span class="k">struct</span><span class="p">,</span> <span class="k">enum</span><span class="p">,</span> <span class="k">union</span><span class="p">,</span> 
+<span class="c1">// Tuple, Array, Slice, </span>
+<span class="c1">// References, Raw Pointer, Function Pointer,</span>
+<span class="c1">// Trait, Impl</span>
+</code></pre></div>
+<p>These are types representing values that hold other values. This means that other types are needed.</p>
+<h1 id='expression'>Expression</h1>
+<p>Expressions are a combination of tokens that evaluate to some value. Expressions may or may not necessarily change the state of the program after being evaluated.</p>
+<h1 id='statement'>Statement</h1>
+<p>Statements are a combination of tokens that change the state of the program when executed. Statements may or may not produce results after execution.</p>
+<h1 id='binding'>Binding</h1>
+<p>A binding takes identifiers and relate that to an expression or value. </p>
 <h2 id='variable'>Variable</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="kt">bool</span> <span class="n">a</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">a</span> <span class="o">=</span> <span class="bp">True</span>
 </code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// Immutable variable</span>
 <span class="k">let</span> <span class="n">a</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="k">let</span> <span class="n">b</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
 
 <span class="c1">// Mutable variable</span>
-<span class="k">let</span> <span class="k">mut</span> <span class="n">a</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
-</code></pre></div><h2 id='constant'>Constant</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">const</span> <span class="kt">bool</span> <span class="n">A_CONST</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="k">let</span> <span class="k">mut</span> <span class="n">c</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="k">let</span> <span class="k">mut</span> <span class="n">d</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</code></pre></div>
+<p>Variable bindings take a value or the result of an expression and associate an identifier with it. Once bound, the variable may be allowed to change values later on. In dynamic languages, they may also be allowed to change types.</p>
+
+<table><thead>
+<tr>
+<th>Binding Operator</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>=</code></td>
+<td>C#, Python, Rust</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Variable Type</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Always required</td>
+<td>C#</td>
+</tr>
+<tr>
+<td>Optional, type inferred</td>
+<td>Rust</td>
+</tr>
+<tr>
+<td>Optional, type hinting</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Type Location</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Before identifier</td>
+<td>C#</td>
+</tr>
+<tr>
+<td>After identifier <code>:</code></td>
+<td>Rust, Python</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Variable default mutability</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Mutable (changable)</td>
+<td>C#, Python</td>
+</tr>
+<tr>
+<td>Immutable (not changable)</td>
+<td>Rust</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Binding can change types</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Yes</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>No</td>
+<td>C#, Rust</td>
+</tr>
+</tbody></table>
+<h2 id='constant'>Constant</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">const</span> <span class="kt">bool</span> <span class="n">A_CONST</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># Python has no enforceable constant
 # By conventions, identifiers in SCREAMING_SNAKE_CASE usually signify constants 
 </span><span class="n">A_CONST</span> <span class="o">=</span> <span class="bp">True</span>
 </code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">const</span> <span class="n">A_CONST</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
-</code></pre></div><h2 id='callable-unit'>Callable Unit</h2>
-<p>Also known functions, procedures, subroutines.</p>
+</code></pre></div>
+<p>Constant binding takes a value or the result of some constant expression and associates it with an identifier. Once bound, the identifier cannot change values for the life of its scope.</p>
+
+<table><thead>
+<tr>
+<th>Prefix Keyword</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>const</code></td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td>None</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Binding Operator</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>=</code></td>
+<td>C#, Python, Rust</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Constant Type</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Always required</td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td>Optional, type hinted</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Type Location</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Before identifier</td>
+<td>C#</td>
+</tr>
+<tr>
+<td>After identifier <code>:</code></td>
+<td>Rust, Python</td>
+</tr>
+</tbody></table>
+<h2 id='callable-unit'>Callable Unit</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">void</span> <span class="nf">NoParameterFunction</span><span class="p">(){}</span>
+<span class="k">void</span> <span class="nf">SingleParameterFunction</span><span class="p">(</span><span class="kt">bool</span> <span class="n">param</span><span class="p">){}</span>
+<span class="k">void</span> <span class="nf">MultipleParameterFunction</span><span class="p">(</span><span class="kt">int</span> <span class="n">param1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">param2</span><span class="p">){}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">def</span> <span class="nf">no_parameter_function</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">single_parameter_function</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">multiple_parameter_function</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">fn</span> <span class="nf">no_parameter_function</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="p">()</span> <span class="p">{}</span>
+<span class="k">fn</span> <span class="nf">single_parameter_function</span><span class="p">(</span><span class="n">param1</span><span class="p">:</span> <span class="nb">i64</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="p">()</span> <span class="p">{}</span>
+<span class="k">fn</span> <span class="nf">multiple_parameter_function</span><span class="p">(</span><span class="n">param1</span><span class="p">:</span> <span class="nb">i64</span><span class="p">,</span> <span class="n">param2</span><span class="p">:</span> <span class="nb">i64</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="p">()</span> <span class="p">{}</span>
+</code></pre></div>
+<p>Also known functions, procedures, subroutines. These bind an identifier to some block of code. They can take values in as parameter as inputs to the function, in which identifiers of the same name may be referred inside the code block, and return values back out.</p>
+
+<table><thead>
+<tr>
+<th>Function Definition Keyword</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>def</code></td>
+<td>Python</td>
+</tr>
+<tr>
+<td><code>fn</code></td>
+<td>Rust</td>
+</tr>
+<tr>
+<td>No Keyword</td>
+<td>C#</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Parameters Typing</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Always required</td>
+<td>C#,Rust</td>
+</tr>
+<tr>
+<td>Optional, type hint</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Parameter Types Required</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Always</td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td>Optional, type hint</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Resulting Typing</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Always required</td>
+<td>C#</td>
+</tr>
+<tr>
+<td>Almost always</td>
+<td>Rust (unless <code>()</code> (unit type))</td>
+</tr>
+<tr>
+<td>Optional, type hint</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Resulting Type Location</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Before identifier</td>
+<td>C#</td>
+</tr>
+<tr>
+<td>After parameters <code>-&gt;</code></td>
+<td>Rust</td>
+</tr>
+<tr>
+<td>After parameters <code>:</code></td>
+<td>Python</td>
+</tr>
+</tbody></table>
 <h1 id='control-flow'>Control Flow</h1>
 <p>Control flow code determines how code flows in the program. According to the structured program theorem, there are only three constructs needed to build any Turing-equivalent machine: sequence, selection, and repetition. </p>
-<h2 id='sequence'>Sequence</h2><h2 id='selection'>Selection</h2>
-<p>Also known as conditional.</p>
-<h3 id='single-branch-if-condition'>Single Branch (if-condition)</h3>
+<h2 id='sequence'>Sequence</h2><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="c1">// S1;S2</span>
+<span class="cm">/* 
+S0;
+{ 
+    S1;
+    S2;S3;
+    S4;
+}
+S5;
+*/</span> 
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># S1\nS2
+# or
+# S1;S2
+</span><span class="s">"""
+S0
+# implied block
+    S1;
+    S2
+    S3;S4
+S5
+
+"""</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="c1">// S1;S2</span>
+<span class="cm">/*
+S0;
+{ 
+    S1;
+    S2;S3;
+    S4;
+}
+S5;
+*/</span>
+</code></pre></div>
+<p>A sequence defines how one can separate two statements from each other. The idea is for the program to execute the first statement and then execute the next statement.</p>
+
+<table><thead>
+<tr>
+<th>Sequence Separator</th>
+<th>Languages with this as Primary</th>
+<th>Languages with this as Secondary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>;</code></td>
+<td>C#, Rust</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>newline</td>
+<td>Python</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p>Multiple sequences can be pulled together into a block.</p>
+
+<table><thead>
+<tr>
+<th>Sequence Open Block</th>
+<th>Sequence Close Block</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>{</code></td>
+<td><code>}</code></td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td>Indent</td>
+<td>Dedent</td>
+<td>Python</td>
+</tr>
+</tbody></table>
+<h2 id='selection'>Selection</h2>
+<p>Also known as conditional. For this control flow, it can branch out into different code sequences depending on certain conditions.</p>
+<h3 id='single-branch'>Single Branch</h3>
 <blockquote>
+<p>Example of single branch conditional</p>
 </blockquote>
-<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">if</span><span class="p">(</span><span class="k">true</span><span class="p">){</span>
-    <span class="c1">// Code run inside</span>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="kt">bool</span> <span class="n">condition</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span> <span class="c1">// or false</span>
+<span class="k">if</span><span class="p">(</span><span class="n">condition</span><span class="p">){</span>
+    <span class="c1">// Code here run when condition is true</span>
 <span class="p">}</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">if</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="c1"># Code runs here
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">condition</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># or False
+</span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># Code here run when condition is true
 </span>    <span class="k">pass</span>
-</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">if</span> <span class="k">true</span> <span class="p">{</span>
-    <span class="c1">// Code run inside</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">let</span> <span class="n">condition</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span> <span class="c1">// or false</span>
+<span class="k">if</span> <span class="n">condition</span> <span class="p">{</span>
+    <span class="c1">// Code here run when condition is true</span>
 <span class="p">}</span>
-</code></pre></div><h3 id='branch-with-alternative-if-else'>Branch With Alternative (if-else)</h3>
+</code></pre></div>
+<p>This conditional branches to a block of code if some condition is true, and is skipped if the condition is false. The true branch meets back to the main path of execution. This kind of conditional can be used to implement an optional path of execution when some condition is met.</p>
+
+<table><thead>
+<tr>
+<th>Branching Keyword</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>if</code></td>
+<td>C#, Python, Rust</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>if (&lt;condition_expression&gt;) {&lt;true_block&gt;}</code></td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td><code>if &lt;condition_expression&gt; {&lt;true_block&gt;}</code></td>
+<td>Rust</td>
+</tr>
+<tr>
+<td><code>if &lt;condition_expression&gt;: INDENT &lt;true_block&gt; DEDENT</code></td>
+<td>Python</td>
+</tr>
+</tbody></table>
+<h3 id='branch-with-default-if-else'>Branch With Default (if-else)</h3>
 <blockquote>
+<p>Example of branch with default conditional</p>
 </blockquote>
-<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">if</span><span class="p">(</span><span class="k">true</span><span class="p">){</span>
-    <span class="c1">// Code run inside</span>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="kt">bool</span> <span class="n">condition</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span> <span class="c1">// or false</span>
+<span class="k">if</span><span class="p">(</span><span class="n">condition</span><span class="p">){</span>
+    <span class="c1">// Code runs here when conditional is true</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="p">{</span>
-
+    <span class="c1">// Code runs here when conditional is false</span>
 <span class="p">}</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">if</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="c1"># Code runs here
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">condition</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># or False
+</span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># Code runs here when conditional is True
 </span>    <span class="k">pass</span>
 <span class="k">else</span><span class="p">:</span> 
-    <span class="k">pass</span>
-</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">if</span> <span class="k">true</span> <span class="p">{</span>
-    <span class="c1">// Code run inside</span>
+    <span class="c1"># Code runs here when conditional is False
+</span>    <span class="k">pass</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">let</span> <span class="n">condition</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span> <span class="c1">// or false</span>
+<span class="k">if</span> <span class="n">condition</span> <span class="p">{</span>
+    <span class="c1">// Code runs here when conditional is true</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="p">{</span>
-
+    <span class="c1">// Code runs here when conditional is false</span>
 <span class="p">}</span>
-</code></pre></div><h2 id='repetition'>Repetition</h2>
+</code></pre></div>
+<p>For this conditional </p>
+
+<table><thead>
+<tr>
+<th>Default Keyword</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>else</code></td>
+<td>C#, Python, Rust</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Structure After If-Condition</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>else {&lt;false_block&gt;}</code></td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td><code>else: INDENT &lt;false_block&gt;} DEDENT</code></td>
+<td>Python</td>
+</tr>
+</tbody></table>
+<h3 id='multiple-branches'>Multiple Branches</h3>
+<blockquote>
+<p>Example of multiple branch: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="kt">bool</span> <span class="n">condition_1</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span> <span class="c1">// or true</span>
+<span class="kt">bool</span> <span class="n">condition_2</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span> <span class="c1">// or false</span>
+<span class="k">if</span><span class="p">(</span><span class="n">condition_1</span><span class="p">){</span>
+    <span class="c1">// Code runs here when conditional_1 is true (regardless of condition_2)</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">condition_2</span><span class="p">){</span>
+    <span class="c1">// Code runs here when condition_1 is false and condition_2 is true</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Code runs here when both condition_1 and condition_2 are false</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">condition_1</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1"># or True
+</span><span class="n">condition_2</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># or False
+</span><span class="k">if</span> <span class="n">condition_1</span><span class="p">:</span>
+    <span class="c1"># Code runs here when conditional_1 is True (regardless of condition_2)
+</span>    <span class="k">pass</span>
+<span class="k">elif</span> <span class="n">condition_2</span><span class="p">:</span>
+    <span class="c1"># Code runs here when condition_1 is false and condition_2 is true
+</span>    <span class="k">pass</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="c1"># Code runs here when both condition_1 and condition_2 are false
+</span>    <span class="k">pass</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">let</span> <span class="n">condition_1</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span> <span class="c1">// or true</span>
+<span class="k">let</span> <span class="n">condition_2</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span> <span class="c1">// or false</span>
+<span class="k">if</span> <span class="n">condition_1</span> <span class="p">{</span>
+    <span class="c1">// Code runs here when condition_1 is true (regardless of condition_2)</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="n">condition_2</span> <span class="p">{</span>
+    <span class="c1">// Code runs here when condition_1 is false and condition_2 is true</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Code runs here when both condition_1 and condition_2 are false</span>
+<span class="p">}</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Alternative Keyword</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>else if</code></td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td><code>elif</code></td>
+<td>Python</td>
+</tr>
+</tbody></table>
+<h2 id='repetition'>Repetition</h2>
 <p>Also known as iteration or looping.</p>
 
 <table><thead>
 <tr>
-<th>Langage</th>
+<th>Language</th>
 <th>Conditional Loop</th>
 <th>Infinite Loop</th>
 <th>Count Loop</th>
 <th>Collection Loop</th>
-<th>Other Loops</th>
-<th>General Loops</th>
-<th>Recursion</th>
 </tr>
 </thead><tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>C#</td>
+<td>Yes</td>
+<td>Possible</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Python</td>
+<td>Yes</td>
+<td>Possible</td>
+<td>Possibe</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 </tbody></table>
 <h3 id='condition-loop'>Condition Loop</h3>
-<p>These are loops that are controlled by conditions.</p>
+<p>These are loops that are controlled by conditions. There are generally to kinds of conditional loop based on when the check occurs, at the beginning of the loop and at the end.</p>
 <h4 id='while-loop'>While Loop</h4>
 <blockquote>
+<p>Example of While Loop</p>
 </blockquote>
 <div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="kt">bool</span> <span class="n">condition</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
 <span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">){</span>
@@ -798,18 +1578,74 @@ Also includes a numbered list of sources referenced.</p>
 <span class="k">while</span> <span class="n">condition</span> <span class="p">{</span>
     <span class="c1">// Run code inside when true</span>
 <span class="p">}</span>
-</code></pre></div><h3 id='infinite-loop'>Infinite Loop</h3>
-<p>An infinite loop is a loop that has no explicit stop condition, meaning that the loop will run without end. To stop an infinite loop, one will require using some mechanism to stop the loop.</p>
-<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">for</span><span class="p">(;;)</span> <span class="p">{</span>
-    <span class="c1">// Do this forever.</span>
-<span class="p">}</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+</code></pre></div>
+<p>In this condition controlled loop, the condition is checked before the loop code is run. If the condition is false, the code is skipped, even if it has never ran. If the condition is true, the code inside is executed. Usually, the condition has some part of its expression that is dynamic and changes when in the loop.</p>
+
+<table><thead>
+<tr>
+<th>While Loop Syntax</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>while(&lt;condition&gt;) {&lt;loop-code&gt;}</code></td>
+<td>C#, Rust</td>
+</tr>
+<tr>
+<td><code>while &lt;condition&gt; {&lt;loop-code&gt;}</code></td>
+<td>Rust</td>
+</tr>
+<tr>
+<td><code>while &lt;condition&gt;: INDENT &lt;loop-code&gt; DEDENT</code></td>
+<td>Python</td>
+</tr>
+</tbody></table>
+<h3 id='infinite-loop'>Infinite Loop</h3>
+<blockquote>
+<p>Example of Infinite Loop (or closest alternative)
+<code>csharp
+for(;;) {
+    // Do this forever.
+}
+</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="c1"># Do this forever
 </span>    <span class="k">pass</span>
 </code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">loop</span> <span class="p">{</span>
     <span class="c1">// Do this forever</span>
 <span class="p">}</span>
-</code></pre></div><h3 id='iteration'>Iteration</h3><h4 id='count-controlled-loop'>Count Controlled Loop</h4>
+</code></pre></div>
+<p>An infinite loop is a loop that has no explicit stop condition, meaning that the loop will run without end. To stop an infinite loop, one will require using some mechanism to stop the loop.</p>
+
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>loop</code></td>
+<td>Rust</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Possible Alternative</th>
+<th>Languages</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>while-true</code></td>
+<td>C#, Python, Rust</td>
+</tr>
+<tr>
+<td><code>empty-for</code></td>
+<td>C#</td>
+</tr>
+</tbody></table>
+<h3 id='iteration'>Iteration</h3><h4 id='count-controlled-loop'>Count Controlled Loop</h4>
 <p>This kind of loops are controlled by a number.</p>
 
 <blockquote>
@@ -855,15 +1691,7 @@ Also includes a numbered list of sources referenced.</p>
 <td>Python, Rust</td>
 </tr>
 </tbody></table>
-<h3 id='recursion'>Recursion</h3>
-<p>Recursion is a special kind of loop used by functions.</p>
 
-<blockquote>
-</blockquote>
-<div class="highlight"><pre class="highlight csharp tab-csharp"><code>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
-</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code>
-</code></pre></div>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
