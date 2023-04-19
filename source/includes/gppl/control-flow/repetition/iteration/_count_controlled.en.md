@@ -1,7 +1,5 @@
 #### Count Controlled Loop
 
-This kind of loops are controlled by a number.
-
 > A count-up look going from 0 to 10 (not including 10)
 
 ```csharp
@@ -21,15 +19,15 @@ for i in 0..10 {
 }
 ```
 
+These kind of loops are controlled by a range of numbers.
 
 | Keyword | Langage          |
-| --------- | ------------------ |
+|---------|------------------|
 | `for`   | C#, Python, Rust |
-|         |                  |
 
 
 
 | Structure                            | Langauge     |
-| -------------------------------------- | -------------- |
+|--------------------------------------|--------------|
 | `for(start, end, next)`              | C#           |
 | `for <variable> in <range_iterable>` | Python, Rust |
