@@ -68,6 +68,7 @@ includes:
   - gppl/control-flow/repetition/infinite
   - gppl/control-flow/repetition/iteration
   - gppl/control-flow/repetition/iteration/count_controlled
+  - gppl/control-flow/repetition/iteration/collection_controlled
   # - gppl/control-flow/repetition/recursion
 
 search: true
