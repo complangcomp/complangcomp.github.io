@@ -61,6 +61,7 @@ includes:
   - gppl/control-flow/selection/single_branch
   - gppl/control-flow/selection/branch_with_default
   - gppl/control-flow/selection/multiple_branches
+  - gppl/control-flow/selection/conditional_expression
   - gppl/control-flow/repetition
   - gppl/control-flow/repetition/condition
   - gppl/control-flow/repetition/condition/while
