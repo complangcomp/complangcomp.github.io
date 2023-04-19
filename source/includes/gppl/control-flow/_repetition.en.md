@@ -7,4 +7,4 @@ Also known as iteration or looping.
 |----------|------------------|---------------|------------|-----------------|
 | C#       | Yes              | Possible      | Yes        | Yes             |
 | Python   | Yes              | Possible      | Possibe    | Yes             |
-| Rust     | Yes              | Yes           | Yes        | Yes             |
+| Rust     | Yes              | Yes           | Possible   | Yes             |
