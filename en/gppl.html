@@ -1627,7 +1627,7 @@ S5;
 <td>Rust</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes</td>
+<td>Possible</td>
 <td>Yes</td>
 </tr>
 </tbody></table>
@@ -1751,6 +1751,54 @@ for(;;) {
 </thead><tbody>
 <tr>
 <td><code>for(start, end, next)</code></td>
+<td>C#</td>
+</tr>
+<tr>
+<td><code>for &lt;variable&gt; in &lt;range_iterable&gt;</code></td>
+<td>Python, Rust</td>
+</tr>
+</tbody></table>
+<h4 id='count-controlled-loop'>Count Controlled Loop</h4>
+<blockquote>
+<p>A count-up look going from 0 to 10 (not including 10)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">numbers</span> <span class="p">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">];</span>
+<span class="k">foreach</span><span class="p">(</span><span class="kt">var</span> <span class="n">number</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">){</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight rust tab-rust"><code><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..</span><span class="mi">10</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>These kind of loops are controlled by a collection of values.</p>
+
+<table><thead>
+<tr>
+<th>Keyword</th>
+<th>Langage</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>foreach</code></td>
+<td>C#</td>
+</tr>
+<tr>
+<td><code>for</code></td>
+<td>Python, Rust</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Langauge</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>for(&lt;type&gt; &lt;variable&gt; in &lt;collection&gt;)</code></td>
 <td>C#</td>
 </tr>
 <tr>
