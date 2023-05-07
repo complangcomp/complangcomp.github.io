@@ -32,7 +32,7 @@ else {
 }
 ```
 
-For this conditional 
+This modifies a conditional by creating a branch for code after any conditions prior to it is false. Think of this as the default case. Note that unlike having code outside the conditional, the code only runs inside this default case only when it has not taking any path previously. 
 
 | Default Keyword | Languages        |
 |-----------------|------------------|
